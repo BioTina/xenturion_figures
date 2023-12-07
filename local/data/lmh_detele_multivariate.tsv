@@ -1,0 +1,15 @@
+CASE	QC..passed.not.passed.	ORIGIN..patient.sample.PDX.fresh.frozen..	DERIVATION..successful.failed.	VALIDATION..successful.failed.not.performed.
+CRC1563	Passed	patient sample	Successful	Successful
+CRC1566	Passed	patient sample	Successful	Successful
+CRC2530	Passed	patient sample	Failed	
+CRC2540	Passed	patient sample	Failed	
+CRC2541	Passed	patient sample	Failed	
+CRC2546	Passed	patient sample	Failed	
+CRC2565	Passed	patient sample	Failed	
+CRC2566	Passed	patient sample	Successful	Not performed
+CRC2572	Passed	patient sample	Failed	
+CRC2573	Passed	patient sample	Successful	Not performed
+CRC2597	Passed	patient sample	Failed	
+CRC2606	Passed	patient sample	Failed	
+CRC1337	Passed	patient sample 	Successful	Successful
+CRC1342	Passed	PDX (fresh)+patient sample	Successful	Successful (patient sample); Not performed (PDX)

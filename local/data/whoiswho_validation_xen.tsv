@@ -1,0 +1,244 @@
+CASE	type
+CRC0022	Validation successful
+CRC0030	Validation successful
+CRC0031	Validation successful
+CRC0051	Validation successful
+CRC0055	Validation successful
+CRC0059	Validation successful
+CRC0065	Validation successful
+CRC0066	Validation successful
+CRC0069	Validation successful
+CRC0076	Validation successful
+CRC0078	Validation successful
+CRC0079	Validation successful
+CRC0080	Validation successful
+CRC0081	Validation successful
+CRC0095	Validation successful
+CRC0096	Validation successful
+CRC0097	Validation successful
+CRC0099	Validation successful
+CRC0103	Validation successful
+CRC0116	Validation successful
+CRC0123	Validation successful
+CRC0124	Validation successful
+CRC0125	Validation successful
+CRC0134	Validation successful
+CRC0137	Validation successful
+CRC0148	Validation successful
+CRC0150	Validation successful
+CRC0151	Validation successful
+CRC0152	Validation successful
+CRC0161	Validation successful
+CRC0166	Validation successful
+CRC0169	Validation successful
+CRC0171	Validation successful
+CRC0177	Validation successful
+CRC0186	Validation successful
+CRC0188	Validation successful
+CRC0196	Validation successful
+CRC0204	Validation successful
+CRC0231	Validation successful
+CRC0254	Validation successful
+CRC0277	Validation successful
+CRC0285	Validation successful
+CRC0291	Validation successful
+CRC0297	Validation successful
+CRC0316	Validation successful
+CRC0322	Validation successful
+CRC0327	Validation successful
+CRC0355	Validation successful
+CRC0370	Validation successful
+CRC0399	Validation successful
+CRC0404	Validation successful
+CRC0441	Validation successful
+CRC0464	Validation successful
+CRC0475	Validation successful
+CRC0515	Validation successful
+CRC0534	Validation successful
+CRC0542	Validation successful
+CRC0544	Validation successful
+CRC0568	Validation successful
+CRC0572	Validation successful
+CRC0578	Validation successful
+CRC0729	Validation successful
+CRC0743	Validation successful
+CRC0772	Validation successful
+CRC1078	Validation successful
+CRC1090	Validation successful
+CRC1139	Validation successful
+CRC1145	Validation successful
+CRC1169	Validation successful
+CRC1239	Validation successful
+CRC1251	Validation successful
+CRC1272	Validation successful
+CRC1278	Validation successful
+CRC1306	Validation successful
+CRC1307	Validation successful
+CRC1314	Validation successful
+CRC1321	Validation successful
+CRC1331	Validation successful
+CRC1337	Validation successful
+CRC1342	Validation successful
+CRC1359	Validation successful
+CRC1360	Validation successful
+CRC1367	Validation successful
+CRC1376	Validation successful
+CRC1389	Validation successful
+CRC1390	Validation successful
+CRC1399	Validation successful
+CRC1430	Validation successful
+CRC1432	Validation successful
+CRC1445	Validation successful
+CRC1446	Validation successful
+CRC1449	Validation successful
+CRC1451	Validation successful
+CRC1460	Validation successful
+CRC1472	Validation successful
+CRC1477	Validation successful
+CRC1502	Validation successful
+CRC1523	Validation successful
+CRC1561	Validation successful
+CRC1563	Validation successful
+CRC1566	Validation successful
+CRC1568	Validation successful
+CRC1575	Validation successful
+CRC1579	Validation successful
+CRC1588	Validation successful
+CRC1589	Validation successful
+CRC1598	Validation successful
+CRC1599	Validation successful
+CRC1614	Validation successful
+CRC1620	Validation successful
+CRC1628	Validation successful
+CRC1629	Validation successful
+CRC1634	Validation successful
+CRC1675	Validation successful
+CRC1723	Validation successful
+CRC1729	Validation successful
+CRC1744	Validation successful
+CRC1745	Validation successful
+CRC1757	Validation successful
+CRC1774	Validation successful
+CRC1779	Validation successful
+CRC1782	Validation successful
+CRC1888	Validation successful
+CRC1895	Validation successful
+CRC1900	Validation successful
+CRC1903	Validation successful
+CRC1916	Validation successful
+CRC1917	Validation successful
+CRC1921	Validation successful
+CRC1961	Validation successful
+CRC1979	Validation successful
+CRC1989	Validation successful
+CRC1241	Validation successful
+CRC0018	Validation failed
+CRC0029	Validation failed
+CRC0063	Validation failed
+CRC0110	Validation failed
+CRC0114	Validation failed
+CRC0119	Validation failed
+CRC0202	Validation failed
+CRC0252	Validation failed
+CRC0257	Validation failed
+CRC0479	Validation failed
+CRC0718	Validation failed
+CRC1313	Validation failed
+CRC1329	Validation failed
+CRC1355	Validation failed
+CRC1408	Validation failed
+CRC1474	Validation failed
+CRC1501	Validation failed
+CRC1530	Validation failed
+CRC1581	Validation failed
+CRC1605	Validation failed
+CRC1606	Validation failed
+CRC1748	Validation failed
+CRC1819	Validation failed
+CRC1883	Validation failed
+CRC0104	Validation not performed
+CRC0197	Validation not performed
+CRC0379	Validation not performed
+CRC0438	Validation not performed
+CRC0456	Validation not performed
+CRC1146	Validation not performed
+CRC1245	Validation not performed
+CRC1257	Validation not performed
+CRC1336	Validation not performed
+CRC1350	Validation not performed
+CRC1448	Validation not performed
+CRC1681	Validation not performed
+CRC1772	Validation not performed
+CRC1781	Validation not performed
+CRC1870	Validation not performed
+CRC1875	Validation not performed
+CRC1893	Validation not performed
+CRC1897	Validation not performed
+CRC1949	Validation not performed
+CRC1951	Validation not performed
+CRC1977	Validation not performed
+CRC2026	Validation not performed
+CRC2044	Validation not performed
+CRC2113	Validation not performed
+CRC2394	Validation not performed
+CRC2566	Validation not performed
+CRC2573	Validation not performed
+CRC2772	Validation not performed
+CRC2790	Validation not performed
+CRC0014	Not established
+CRC0019	Not established
+CRC0028	Not established
+CRC0058	Not established
+CRC0064	Not established
+CRC0067	Not established
+CRC0068	Not established
+CRC0072	Not established
+CRC0077	Not established
+CRC0106	Not established
+CRC0118	Not established
+CRC0121	Not established
+CRC0175	Not established
+CRC0185	Not established
+CRC0199	Not established
+CRC0262	Not established
+CRC0306	Not established
+CRC0312	Not established
+CRC0330	Not established
+CRC0344	Not established
+CRC0382	Not established
+CRC0484	Not established
+CRC0508	Not established
+CRC0591	Not established
+CRC0680	Not established
+CRC0740	Not established
+CRC1083	Not established
+CRC1166	Not established
+CRC1198	Not established
+CRC1277	Not established
+CRC1303	Not established
+CRC1318	Not established
+CRC1387	Not established
+CRC1486	Not established
+CRC1522	Not established
+CRC1562	Not established
+CRC1586	Not established
+CRC1648	Not established
+CRC1650	Not established
+CRC1709	Not established
+CRC1746	Not established
+CRC1765	Not established
+CRC1811	Not established
+CRC1816	Not established
+CRC1824	Not established
+CRC1826	Not established
+CRC1868	Not established
+CRC1901	Not established
+CRC2060	Not established
+CRC2530	Not established
+CRC2540	Not established
+CRC2541	Not established
+CRC2546	Not established
+CRC2565	Not established
+CRC2572	Not established
+CRC2597	Not established
+CRC2606	Not established
