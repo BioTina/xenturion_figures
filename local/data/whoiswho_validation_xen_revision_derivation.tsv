@@ -1,0 +1,244 @@
+CASE	type	derivation_type
+CRC0022	Validation successful	Derivation successful
+CRC0030	Validation successful	Derivation successful
+CRC0031	Validation successful	Derivation successful
+CRC0051	Validation successful	Derivation successful
+CRC0055	Validation successful	Derivation successful
+CRC0059	Validation successful	Derivation successful
+CRC0065	Validation successful	Derivation successful
+CRC0066	Validation successful	Derivation successful
+CRC0069	Validation successful	Derivation successful
+CRC0076	Validation successful	Derivation successful
+CRC0078	Validation successful	Derivation successful
+CRC0079	Validation successful	Derivation successful
+CRC0080	Validation successful	Derivation successful
+CRC0081	Validation successful	Derivation successful
+CRC0095	Validation successful	Derivation successful
+CRC0096	Validation successful	Derivation successful
+CRC0097	Validation successful	Derivation successful
+CRC0099	Validation successful	Derivation successful
+CRC0103	Validation successful	Derivation successful
+CRC0116	Validation successful	Derivation successful
+CRC0123	Validation successful	Derivation successful
+CRC0124	Validation successful	Derivation successful
+CRC0125	Validation successful	Derivation successful
+CRC0134	Validation successful	Derivation successful
+CRC0137	Validation successful	Derivation successful
+CRC0148	Validation successful	Derivation successful
+CRC0150	Validation successful	Derivation successful
+CRC0151	Validation successful	Derivation successful
+CRC0152	Validation successful	Derivation successful
+CRC0161	Validation successful	Derivation successful
+CRC0166	Validation successful	Derivation successful
+CRC0169	Validation successful	Derivation successful
+CRC0171	Validation successful	Derivation successful
+CRC0177	Validation successful	Derivation successful
+CRC0186	Validation successful	Derivation successful
+CRC0188	Validation successful	Derivation successful
+CRC0196	Validation successful	Derivation successful
+CRC0204	Validation successful	Derivation successful
+CRC0231	Validation successful	Derivation successful
+CRC0254	Validation successful	Derivation successful
+CRC0277	Validation successful	Derivation successful
+CRC0285	Validation successful	Derivation successful
+CRC0291	Validation successful	Derivation successful
+CRC0297	Validation successful	Derivation successful
+CRC0316	Validation successful	Derivation successful
+CRC0322	Validation successful	Derivation successful
+CRC0327	Validation successful	Derivation successful
+CRC0355	Validation successful	Derivation successful
+CRC0370	Validation successful	Derivation successful
+CRC0399	Validation successful	Derivation successful
+CRC0404	Validation successful	Derivation successful
+CRC0441	Validation successful	Derivation successful
+CRC0464	Validation successful	Derivation successful
+CRC0475	Validation successful	Derivation successful
+CRC0515	Validation successful	Derivation successful
+CRC0534	Validation successful	Derivation successful
+CRC0542	Validation successful	Derivation successful
+CRC0544	Validation successful	Derivation successful
+CRC0568	Validation successful	Derivation successful
+CRC0572	Validation successful	Derivation successful
+CRC0578	Validation successful	Derivation successful
+CRC0729	Validation successful	Derivation successful
+CRC0743	Validation successful	Derivation successful
+CRC0772	Validation successful	Derivation successful
+CRC1078	Validation successful	Derivation successful
+CRC1090	Validation successful	Derivation successful
+CRC1139	Validation successful	Derivation successful
+CRC1145	Validation successful	Derivation successful
+CRC1169	Validation successful	Derivation successful
+CRC1239	Validation successful	Derivation successful
+CRC1251	Validation successful	Derivation successful
+CRC1272	Validation successful	Derivation successful
+CRC1278	Validation successful	Derivation successful
+CRC1306	Validation successful	Derivation successful
+CRC1307	Validation successful	Derivation successful
+CRC1314	Validation successful	Derivation successful
+CRC1321	Validation successful	Derivation successful
+CRC1331	Validation successful	Derivation successful
+CRC1337	Validation successful	Derivation successful
+CRC1342	Validation successful	Derivation successful
+CRC1359	Validation successful	Derivation successful
+CRC1360	Validation successful	Derivation successful
+CRC1367	Validation successful	Derivation successful
+CRC1376	Validation successful	Derivation successful
+CRC1389	Validation successful	Derivation successful
+CRC1390	Validation successful	Derivation successful
+CRC1399	Validation successful	Derivation successful
+CRC1430	Validation successful	Derivation successful
+CRC1432	Validation successful	Derivation successful
+CRC1445	Validation successful	Derivation successful
+CRC1446	Validation successful	Derivation successful
+CRC1449	Validation successful	Derivation successful
+CRC1451	Validation successful	Derivation successful
+CRC1460	Validation successful	Derivation successful
+CRC1472	Validation successful	Derivation successful
+CRC1477	Validation successful	Derivation successful
+CRC1502	Validation successful	Derivation successful
+CRC1523	Validation successful	Derivation successful
+CRC1561	Validation successful	Derivation successful
+CRC1563	Validation successful	Derivation successful
+CRC1566	Validation successful	Derivation successful
+CRC1568	Validation successful	Derivation successful
+CRC1575	Validation successful	Derivation successful
+CRC1579	Validation successful	Derivation successful
+CRC1588	Validation successful	Derivation successful
+CRC1589	Validation successful	Derivation successful
+CRC1598	Validation successful	Derivation successful
+CRC1599	Validation successful	Derivation successful
+CRC1614	Validation successful	Derivation successful
+CRC1620	Validation successful	Derivation successful
+CRC1628	Validation successful	Derivation successful
+CRC1629	Validation successful	Derivation successful
+CRC1634	Validation successful	Derivation successful
+CRC1675	Validation successful	Derivation successful
+CRC1723	Validation successful	Derivation successful
+CRC1729	Validation successful	Derivation successful
+CRC1744	Validation successful	Derivation successful
+CRC1745	Validation successful	Derivation successful
+CRC1757	Validation successful	Derivation successful
+CRC1774	Validation successful	Derivation successful
+CRC1779	Validation successful	Derivation successful
+CRC1782	Validation successful	Derivation successful
+CRC1888	Validation successful	Derivation successful
+CRC1895	Validation successful	Derivation successful
+CRC1900	Validation successful	Derivation successful
+CRC1903	Validation successful	Derivation successful
+CRC1916	Validation successful	Derivation successful
+CRC1917	Validation successful	Derivation successful
+CRC1921	Validation successful	Derivation successful
+CRC1961	Validation successful	Derivation successful
+CRC1979	Validation successful	Derivation successful
+CRC1989	Validation successful	Derivation successful
+CRC1241	Validation successful	Derivation successful
+CRC0018	Validation failed	Derivation successful
+CRC0029	Validation failed	Derivation successful
+CRC0063	Validation failed	Derivation successful
+CRC0110	Validation failed	Derivation successful
+CRC0114	Validation failed	Derivation successful
+CRC0119	Validation failed	Derivation successful
+CRC0202	Validation failed	Derivation successful
+CRC0252	Validation failed	Derivation successful
+CRC0257	Validation failed	Derivation successful
+CRC0479	Validation failed	Derivation successful
+CRC0718	Validation failed	Derivation successful
+CRC1313	Validation failed	Derivation successful
+CRC1329	Validation failed	Derivation successful
+CRC1355	Validation failed	Derivation successful
+CRC1408	Validation failed	Derivation successful
+CRC1474	Validation failed	Derivation successful
+CRC1501	Validation failed	Derivation successful
+CRC1530	Validation failed	Derivation successful
+CRC1581	Validation failed	Derivation successful
+CRC1605	Validation failed	Derivation successful
+CRC1606	Validation failed	Derivation successful
+CRC1748	Validation failed	Derivation successful
+CRC1819	Validation failed	Derivation successful
+CRC1883	Validation failed	Derivation successful
+CRC0104	Validation not performed	Derivation successful
+CRC0197	Validation not performed	Derivation successful
+CRC0379	Validation not performed	Derivation successful
+CRC0438	Validation not performed	Derivation successful
+CRC0456	Validation not performed	Derivation successful
+CRC1146	Validation not performed	Derivation successful
+CRC1245	Validation not performed	Derivation successful
+CRC1257	Validation not performed	Derivation successful
+CRC1336	Validation not performed	Derivation successful
+CRC1350	Validation not performed	Derivation successful
+CRC1448	Validation not performed	Derivation successful
+CRC1681	Validation not performed	Derivation successful
+CRC1772	Validation not performed	Derivation successful
+CRC1781	Validation not performed	Derivation successful
+CRC1870	Validation not performed	Derivation successful
+CRC1875	Validation not performed	Derivation successful
+CRC1893	Validation not performed	Derivation successful
+CRC1897	Validation not performed	Derivation successful
+CRC1949	Validation not performed	Derivation successful
+CRC1951	Validation not performed	Derivation successful
+CRC1977	Validation not performed	Derivation successful
+CRC2026	Validation not performed	Derivation successful
+CRC2044	Validation not performed	Derivation successful
+CRC2113	Validation not performed	Derivation successful
+CRC2394	Validation not performed	Derivation successful
+CRC2566	Validation not performed	Derivation successful
+CRC2573	Validation not performed	Derivation successful
+CRC2772	Validation not performed	Derivation successful
+CRC2790	Validation not performed	Derivation successful
+CRC0014	Not established	Derivation failed
+CRC0019	Not established	Derivation failed
+CRC0028	Not established	Derivation failed
+CRC0058	Not established	Derivation failed
+CRC0064	Not established	Derivation failed
+CRC0067	Not established	Derivation failed
+CRC0068	Not established	Derivation failed
+CRC0072	Not established	Derivation failed
+CRC0077	Not established	Derivation failed
+CRC0106	Not established	Derivation failed
+CRC0118	Not established	Derivation failed
+CRC0121	Not established	Derivation failed
+CRC0175	Not established	Derivation failed
+CRC0185	Not established	Derivation failed
+CRC0199	Not established	Derivation failed
+CRC0262	Not established	Derivation failed
+CRC0306	Not established	Derivation failed
+CRC0312	Not established	Derivation failed
+CRC0330	Not established	Derivation failed
+CRC0344	Not established	Derivation failed
+CRC0382	Not established	Derivation failed
+CRC0484	Not established	Derivation failed
+CRC0508	Not established	Derivation failed
+CRC0591	Not established	Derivation failed
+CRC0680	Not established	Derivation failed
+CRC0740	Not established	Derivation failed
+CRC1083	Not established	Derivation failed
+CRC1166	Not established	Derivation failed
+CRC1198	Not established	Derivation failed
+CRC1277	Not established	Derivation failed
+CRC1303	Not established	Derivation failed
+CRC1318	Not established	Derivation failed
+CRC1387	Not established	Derivation failed
+CRC1486	Not established	Derivation failed
+CRC1522	Not established	Derivation failed
+CRC1562	Not established	Derivation failed
+CRC1586	Not established	Derivation failed
+CRC1648	Not established	Derivation failed
+CRC1650	Not established	Derivation failed
+CRC1709	Not established	Derivation failed
+CRC1746	Not established	Derivation failed
+CRC1765	Not established	Derivation failed
+CRC1811	Not established	Derivation failed
+CRC1816	Not established	Derivation failed
+CRC1824	Not established	Derivation failed
+CRC1826	Not established	Derivation failed
+CRC1868	Not established	Derivation failed
+CRC1901	Not established	Derivation failed
+CRC2060	Not established	Derivation failed
+CRC2530	Not established	Derivation failed
+CRC2540	Not established	Derivation failed
+CRC2541	Not established	Derivation failed
+CRC2546	Not established	Derivation failed
+CRC2565	Not established	Derivation failed
+CRC2572	Not established	Derivation failed
+CRC2597	Not established	Derivation failed
+CRC2606	Not established	Derivation failed
