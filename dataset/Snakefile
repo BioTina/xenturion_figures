@@ -118,7 +118,7 @@ rule heatmap:
         #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='coolwarm', robust=True, center=0)# cbar_kws=cbar_kws)
         #Z = h.dendrogram_row.linkage
         ax = h.ax_heatmap
-		#ax.set_rasterization_zordeset_rasterization_zorderr(1)
+        #ax.set_rasterization_zordeset_rasterization_zorderr(1)
         #place vertical lines to identify chromosomes
         for pos in chr_limits:
             ax.axvline(x=pos, color='black', linewidth=0.3)
@@ -160,6 +160,31 @@ rule gistic_vs_msk_thresholded_genes:
     output: corrplot='{kind}_vs_msk.pdf', corrs='{kind}_vs_msk.tsv'
     log: log='{kind}_vs_msk.log'
     script: SRC_DIR+'/gistic_genes_thr_vs_msk.R'
+
+## figure 4
+
+# panel D
+rule plot_PDXTearly_PDXTlate_clones:
+    input: "../local/data/LMO-early-late_clones.50-10.table"
+    output: "PDXTearly_PDXTlate_clones.pdf"
+    params: CMD=SRC_DIR+"/barplot.py"
+    shell: 
+        """
+         python3 {params.CMD} {input} "" "PDXT_early" "PDXT_late" {output}
+        """
+
+rule plot_PDXTearly_PDX_clones:
+    input: "../local/data/LMO-early-LMX_clones.50-10.table"
+    output: "PDXTearly_PDX_clones.pdf"
+    params: CMD=SRC_DIR+"/barplot.py"
+    shell: 
+        """
+            python3 {params.CMD} {input} "" "PDXT_early" "PDX" {output}
+        """
+
+rule all_clones_plot:
+    input: "PDXTearly_PDXTlate_clones.pdf", "PDXTearly_PDX_clones.pdf"
+
 
 ## figure 4
 
