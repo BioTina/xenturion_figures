@@ -3,7 +3,7 @@ library(pheatmap)
 library(readxl)
 
 max_inh_f <- snakemake@input[['max_inh']]
-targets_drug_screening <- snakemake@input[['drug_targets']]
+targets_drug_screening_f <- snakemake@input[['drug_targets']]
 heatmap_f <- snakemake@output[['heatmap']]
 
 #d <- read.table('/scratch/trcanmed/biobanca/dataset/V1/drug_screening/max_drug_value.tsv', sep="\t", header=TRUE)
@@ -18,8 +18,7 @@ dm$drug <- rownames(dm)
 dm$drug2 <- sub("_[^.]*$", "", dm$drug)
 
 
-targets_drug_screening <- read_excel("/scratch/trcanmed/biobanca/local/share/data/targets_drug_screening.xlsx", 
-                                     col_names = FALSE)
+targets_drug_screening <- read_excel(targets_drug_screening_f, col_names = FALSE)
 colnames(targets_drug_screening) <- c("drug", "targets")
 dm <- merge(dm, targets_drug_screening, by = "drug")
 dm$name <- paste0(dm$drug2, "\n", dm$targets)

@@ -1,8 +1,9 @@
 SRC_DIR="../local/src/"
 
 ## figure 1
+# [- dok is a marker for rules that have been checked inside the docker image.]
 
-## fig1f
+## fig1f - dok
 rule multivariata_clinical_data:
     input: clinical_data = "../local/data/clinical_data_done_revision020424.tsv", pdo="../local/data/whoiswho_validation_xen_revision_derivation.tsv", 
            mut = "../local/data/fra_mutational_annotation.tsv", umani = "../local/data/lmh_detele_multivariate.tsv", 
@@ -13,19 +14,19 @@ rule multivariata_clinical_data:
 
 ## figure 2
 
-## fig2a
+## fig2a - dok
 rule oncoprint:
     input: Rimage='../local/data/preprocGeneAF_0.05.Rdata'
     output: op="oncoprint_0.05.pdf", op_data="oncoprint_0.05.RData", pie="oncoprint_pie_0.05.pdf"
     script: SRC_DIR+"/oncoprint_diff.R"
 
-## fig2b
+## fig2b - dok
 rule jaccard_mut_sim:
     input: Rimage='../local/data/preprocGeneAF_0.05.Rdata'
     output: pheat="jaccard_heat_0.05.pdf", jac_f="jac_matrix_0.05.tsv", mw="jac_MW_0.05.txt"
     script: SRC_DIR+"/jaccard_mut.R"
 
-## fig2c
+## fig2c - TODO
 rule freqs_tcga_msk:
     input: pdoTiers="../local/data/pdo_tiers.tsv", xenoTiers="../local/data/xeno_tiers.tsv",
             xenoGenes="../local/data/merged_table_nomultiallele_wtiers_annot_pdx",
@@ -43,21 +44,16 @@ rule freqs_tcga_msk:
 
 ## figure 3
 
-## fig3a
+## fig3a - TODO diverso aspetto?
 rule obtain_density_plot_wilcox:
     input: res="../local/data/LMX-LMO_correlation_buoni.tsv.gz"
     output: density_plot = "density_f_buoni.pdf", wilcox_result ="wilcox_buoni"
     script: SRC_DIR+'/matched_unmatched_plot_wilcox.R'
 
-## fig3b
-def heatmap_in(wildcards):
-    if wildcards.bin == "orig":
-        return "../local/data/"+wildcards.kind+'_segm_l2fc.tsv.gz'
-    else:
-        return wildcards.kind+'.'+wildcards.bin+'.tsv.gz'
+## fig3b - dok
 rule heatmap:
-    input: heatmap_in
-    output: "{kind}_{bin}_heatmap_{mute}.pdf"
+    input: '../local/data/pdo_segm_l2fc.tsv.gz'
+    output: "pdo_orig_heatmap_nomute.pdf"
     run:
         import numpy as np
         import pandas as pd
@@ -72,14 +68,14 @@ rule heatmap:
 
         cnvs = pd.read_csv(input[0], sep="\t") 
         
-        if wildcards.bin == 'orig':
-            split1 = [x.split(':') for x in cnvs.index.values]
-            split2 = [x[1].split('-') for x in split1]
-            boundaries = pd.DataFrame(data={'chr':[x[0] for x in split1], 'b': [x[0] for x in split2], 'e': [x[1] for x in split2]})
-            cnvs = cnvs.transpose()
-        else:
-            boundaries = cnvs[['chr','b','e']].copy()
-            cnvs = cnvs.drop(columns=['chr','b','e']).transpose()
+        #if wildcards.bin == 'orig':
+        split1 = [x.split(':') for x in cnvs.index.values]
+        split2 = [x[1].split('-') for x in split1]
+        boundaries = pd.DataFrame(data={'chr':[x[0] for x in split1], 'b': [x[0] for x in split2], 'e': [x[1] for x in split2]})
+        cnvs = cnvs.transpose()
+        #else:
+        #boundaries = cnvs[['chr','b','e']].copy()
+        #cnvs = cnvs.drop(columns=['chr','b','e']).transpose()
 
         #chr_limits = boundaries.index[boundaries['e'].isin(boundaries.groupby('chr', sort=False)['e'].max().values)].tolist()
         i = 0
@@ -97,8 +93,8 @@ rule heatmap:
         chrN_list = []
 
         for x in chr_list:
-            if wildcards.bin != "orig":
-                x = x[3:] #remove 'chr' for readability
+            #if wildcards.bin != "orig":
+            #x = x[3:] #remove 'chr' for readability
             chrN_list.append(x)
 
         #compute the position where chromosome labels will be placed on the plots
@@ -126,8 +122,8 @@ rule heatmap:
 
         #place chromosome ticks at the right position
         ax.xaxis.set_major_locator(ticker.FixedLocator((pos_list)))
-        if wildcards.mute != "mute":
-            ax.xaxis.set_major_formatter(ticker.FixedFormatter((chrN_list)))
+        #if wildcards.mute != "mute":
+        ax.xaxis.set_major_formatter(ticker.FixedFormatter((chrN_list)))
         #ax.tick_params(axis='x', rotation=0, labelsize=5)
         ax.tick_params(axis='x', rotation=0, labelsize=5)
         ax.xaxis.set_minor_locator(ticker.FixedLocator(chr_boundaries))
@@ -147,7 +143,8 @@ rule heatmap:
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
-## fig3c
+## fig3c - dok
+# target is pdo_vs_tcga.pdf (and vs_msk.pdf) for 3c and xeno_vs_tcga for the supplementary showing the comparison with xenografts.
 rule gistic_vs_tcga_thresholded_genes:
     input: us='../local/data/all_thresholded.by_genes_{kind}.txt', tcga='../local/data/crc_gistic.txt',  
            Rimage='../local/data/theme_5.Rdata'
@@ -163,100 +160,129 @@ rule gistic_vs_msk_thresholded_genes:
     script: SRC_DIR+'/gistic_genes_thr_vs_msk.R'
 
 ## figure 4
+## fig4a - TODO jaccard early-late
 
-# panel D
-rule plot_PDXTearly_PDXTlate_clones:
-    input: "../local/data/LMO-early-late_clones.50-10.table"
-    output: "PDXTearly_PDXTlate_clones.pdf"
-    params: CMD=SRC_DIR+"/barplot.py"
-    shell: 
-        """
-         python3 {params.CMD} {input} "" "PDXT_early" "PDXT_late" {output}
-        """
-
-rule plot_PDXTearly_PDX_clones:
-    input: "../local/data/LMO-early-LMX_clones.50-10.table"
-    output: "PDXTearly_PDX_clones.pdf"
-    params: CMD=SRC_DIR+"/barplot.py"
-    shell: 
-        """
-            python3 {params.CMD} {input} "" "PDXT_early" "PDX" {output}
-        """
-
-rule all_clones_plot:
-    input: "PDXTearly_PDXTlate_clones.pdf", "PDXTearly_PDX_clones.pdf"
+## fig4b - CN early late - dok
+rule heatmap_cnv:
+    input:d='../local/data/heatmap_100000.csv',annotation='../local/data/annotation_100000.csv'
+    output: out='heatmap_cnv_events_100000_pdxts_early_late.pdf'
+    run:
+        import numpy as np
+        import pandas as pd
+        import seaborn as sns
+        import matplotlib.colors as colors
+        import matplotlib 
+        import matplotlib.cm as cm
+        import matplotlib.ticker as ticker
+        import matplotlib.pyplot as plt
+        import matplotlib.colors as colors
+        import matplotlib.transforms as transforms
+        from matplotlib.colors import ListedColormap
+        import matplotlib.patches as mpatches
 
 
-## figure 4
+        cnvs = pd.read_csv(input[0], header=0,index_col=0) 
+        print(cnvs.head())
 
-## fig4a # testOK nodocker
-rule pheatmap_buoni:
-    input: correlation_matrix="../local/data/LMX-LMO_correlation_buoni.tsv.gz"
-    output: pheatmap="pheatmap_correlation_buoni.pdf"
-    script: SRC_DIR+'/pheatmap.R'
+        
+       # if wildcards.bin == 'orig':
+        #    split1 = [x.split(':') for x in cnvs.index.values]
+         #   split2 = [x[1].split('-') for x in split1]
+          #  boundaries = pd.DataFrame(data={'chr':[x[0] for x in split1], 'b': [x[0] for x in split2], 'e': [x[1] for x in split2]})
+           # cnvs = cnvs.transpose()
+        #else:
+            #boundaries = cnvs[['chr','b','e']].copy()
+            #cnvs = cnvs.drop(columns=['chr','b','e']).transpose()
+        boundaries=pd.read_csv(input[1],header=0,index_col=None)
+        boundaries=boundaries.rename(columns={'':'bin'})
+        
+        boundaries['bin']=boundaries.index
+        boundaries=boundaries.rename(columns={'Chr':'chr'})
 
-## fig4b
-rule sankey_cms:
-    input: "../local/data/reorder_model_cms_validated.tsv"
-    output: html="sankey_model_cms_validated_coppie_simo.html"
-    script: SRC_DIR+"/sankey_classification.R"
+        chr_limits = boundaries.index[boundaries['bin'].isin(boundaries.groupby('chr', sort=False)['bin'].max().values)].tolist()
+        i = 0
+        chr_limits = []
+        last = ""
+        for index, row in boundaries.iterrows():
+            if last != "" and last != row['chr']:
+                chr_limits.append(i-1)
+            last = row['chr']
+            i = i + 1        
+        chr_limits.append(i-1)
 
-rule sankey_cris:
-    input: "../local/data/vsd_model_cris-right_validated.tsv"
-    output: html="vsd_sankey_model_simo_cris_validated.html"
-    script: SRC_DIR+"/sankey_classification.R"
+        chr_boundaries = np.append(0, chr_limits)
+        chr_list = boundaries['chr'].unique().tolist()
+        chrN_list = []
+        print(chr_boundaries)
+        for x in chr_list:
+            x = x[3:] #remove 'chr' for readability
+            chrN_list.append(x)
+        #compute the position where chromosome labels will be placed on the plots
+        start = 0
+        pos_list = []
+        for end in chr_limits:
+            pos_list.append((start+end)/2)
+            start = end+1
 
-## figure 5
+        yticklabels = False
 
-## fig5a
-rule plot_CTG_imaging:
-    input: pdo_cetuxi = "../local/data/pdo_cetuxi_buoni.tsv",  Rimage='../local/data/theme_5.Rdata'
-    output: pic_legend = "CTG_vs_Imaging_legend.pdf", pic_square = "CTG_vs_Imaging.pdf", cors="CTG_vs_Imaging.tsv"
-    script: SRC_DIR+"/ctg_imaging_plot.R"
+        #cbar_kws={"ticks": np.arange(0,13,1)}
+        maxv = cnvs.max().max()
+        minv = cnvs.min().min()
+        cmap_dict ={0:'white',1:'red', 2:"blue"}
+        cmap = ListedColormap([cmap_dict[i] for i in range(3)])
+        
+        f, culo = plt.subplots()
+        h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = True, cmap=cmap,robust=True, rasterized=True,cbar=False,vmin=minv,vmax=maxv)# cbar_kws=cbar_kws)
+        #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='RdBu_r', robust=True, center=0)# cbar_kws=cbar_kws)
+        #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='bwr', vmax=maxv, vmin=minv, center=0)# cbar_kws=cbar_kws)
+        #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='coolwarm', robust=True, center=0)# cbar_kws=cbar_kws)
+        #Z = h.dendrogram_row.linkage
+        ax = h.ax_heatmap
+        h.cax.set_visible(False)
+		#ax.set_rasterization_zordeset_rasterization_zorderr(1)
+        #place vertical lines to identify chromosomes
+        for pos in chr_limits:
+            ax.axvline(x=pos, color='black', linewidth=0.3)
 
-## fig5b
-rule scatterplot_annot_targeted:
-    input: x="../local/data/pdo_cetuxi_buoni.tsv", y="../local/data/cetuxi_perc_w3_buoni.tsv", mut="../local/data/preprocGeneAF_0.05.Rdata", cn="../local/data/binarized_cn.tsv",
-            Rimage='../local/data/theme_5.Rdata'
-    output: plot='scatter_targeted.pdf', stats="scatter_targeted.tsv", annot="targeted_annot.tsv", annot_whole="targeted_annot_whole.tsv"
-    params: tool=SRC_DIR+'/scatter_annotated_targeted.R', prefix="CTG", merge="case", yname="Cetuximab_dVw3"
-    shell:
-         """
-             {params.tool} {input.x} {input.y} {output.plot} {params.prefix} {params.merge} {params.yname} {input.mut} {input.cn} {input.Rimage} {output.stats} {output.annot} {output.annot_whole}
-         """
+        #place chromosome ticks at the right position
+        ax.xaxis.set_major_locator(ticker.FixedLocator((pos_list)))
+       
+        ax.xaxis.set_major_formatter(ticker.FixedFormatter((chrN_list)))
+        h.ax_heatmap.set_yticklabels(h.ax_heatmap.get_ymajorticklabels(), fontsize = 6)
+        ax.tick_params(axis='x', rotation=0, labelsize=5)
+        ax.xaxis.set_minor_locator(ticker.FixedLocator(chr_boundaries))
+        ax.tick_params(axis='x', length=8, which='minor')
+        
+        
+       
+        # add legend
+        box = culo.get_position()
+        #culo.set_position([box.x0, box.y0, box.width * 0.3, box.height])
+        legend_ax = h.fig.add_axes([0, 0, 0.1, 0.6])
+        legend_ax.axis('off')
+        # reconstruct color map
+        colors = [cmap_dict[i] for i in range(3)]
+        # add color map to legend
+        patches = [mpatches.Patch(facecolor=c, edgecolor=c) for c in colors]
+        value_to_int={'NO':0,'GAINED':1, 'LOSS':2}
+        legend = legend_ax.legend(patches,
+            value_to_int.keys(),
+            handlelength=0.8, loc='upper left')
+        for t in legend.get_texts():
+            t.set_ha("left")
 
-## fig5c
-rule auc_r:
-    input: input_auc="../local/data/input_auc.tsv", targeted_annot="../local/data/targeted_annot.tsv"
-    output: auc_all="auc_all.pdf", auc_wt="auc_wt.pdf", sens_table="sens_table.tsv"
-    log: log="auc.log"
-    script: SRC_DIR+"/roc_auc.R"
+        #ax.set_xlabel("Chromosomes", fontweight='bold', fontsize=25)
+        #ax.set_ylabel("Clones", fontsize=25, fontweight='bold')
+        # A4 is 8-1/4 x 11-3/4 in
+        plt.gcf().set_size_inches(7, 3.8) # w, h
+        # cannot find a way to get tolerable linewidth cause linewidth parameter seem to be ignored, will
+        # scale by hand
+        #plt.gcf().set_size_inches(37, 21)
+        plt.savefig(output[0], dpi=300)
+        plt.clf()
 
-## fig5d
-rule ctg_vs_crispr:
-    input: cetuxi='../local/data/pdo_cetuxi.tsv', crispr="../local/data/EGFR_ds_avg.tsv",
-           Rimage='../local/data/theme_5.Rdata', annot='../local/data/targeted_annot_whole.tsv'
-    output: plot="EGFR_CTG_5000_cor.pdf", plot_legend="EGFR_CTG_5000_cor.legend.pdf"
-    log: log="EGFR_CTG_5000_cor.log"
-    script: SRC_DIR+"/EGFR_cetuxi_cor.R"
-
-## figure 6
-
-## fig6a
-rule coerenza_deg_ox:
-    input: pdo="../local/data/treat_cutoff0.05-cetuxi.vs.NT.deseq2_pdo.tsv", pdx="../local/data/treat_cutoff0.05-cetuxi.vs.NT.deseq2_pdx.tsv", Rimage='../local/data/theme_5.Rdata'
-    output: pdf="biobanca_cor_ctx_raster.pdf"
-    script: SRC_DIR+"/coerenza_dex_x_o.R"
-
-## fig6b
-rule heatmap_score:
-    input: max_inh="../local/data/max_drug_value.tsv", drug_targets="../local/data/targets_drug_screening.xlsx"
-    output: heatmap="heatmap_max_inhibition_score.pdf"
-    script: SRC_DIR+"/heatmaps_drug_screening_novalue.R"
-
-## figura LOH
-
-## fig
+# fig 4Y - TODO FIXME?? everything is marked blue as loss_loh
 rule pdxts_early_late:
     input:d='../local/data/heatmap_100000.csv',annotation='../local/data/annotation_100000.csv'
     output: out='heatmap_loh_events_100000_pdxts_early_late.pdf'
@@ -376,123 +402,94 @@ rule pdxts_early_late:
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
-## figura CNV
+# fig4d - dok
+rule plot_PDXTearly_PDXTlate_clones:
+    input: "../local/data/LMO-early-late_clones.50-10.table"
+    output: "PDXTearly_PDXTlate_clones.pdf"
+    params: CMD=SRC_DIR+"/barplot.py"
+    shell: 
+        """
+         python3 {params.CMD} {input} "" "PDXT_early" "PDXT_late" {output}
+        """
 
-rule heatmap_cnv:
-    input:d='../local/data/heatmap_100000.csv',annotation='../local/data/annotation_100000.csv'
-    output: out='heatmap_cnv_events_100000_pdxts_early_late.pdf'
-    run:
-        import numpy as np
-        import pandas as pd
-        import seaborn as sns
-        import matplotlib.colors as colors
-        import matplotlib 
-        import matplotlib.cm as cm
-        import matplotlib.ticker as ticker
-        import matplotlib.pyplot as plt
-        import matplotlib.colors as colors
-        import matplotlib.transforms as transforms
-        from matplotlib.colors import ListedColormap
-        import matplotlib.patches as mpatches
+# suppl fig7d - dok
+rule plot_PDXTearly_PDX_clones:
+    input: "../local/data/LMO-early-LMX_clones.50-10.table"
+    output: "PDXTearly_PDX_clones.pdf"
+    params: CMD=SRC_DIR+"/barplot.py"
+    shell: 
+        """
+            python3 {params.CMD} {input} "" "PDXT_early" "PDX" {output}
+        """
+
+rule all_clones_plot:
+    input: "PDXTearly_PDXTlate_clones.pdf", "PDXTearly_PDX_clones.pdf"
 
 
-        cnvs = pd.read_csv(input[0], header=0,index_col=0) 
-        print(cnvs.head())
+## figure 5
 
-        
-       # if wildcards.bin == 'orig':
-        #    split1 = [x.split(':') for x in cnvs.index.values]
-         #   split2 = [x[1].split('-') for x in split1]
-          #  boundaries = pd.DataFrame(data={'chr':[x[0] for x in split1], 'b': [x[0] for x in split2], 'e': [x[1] for x in split2]})
-           # cnvs = cnvs.transpose()
-        #else:
-            #boundaries = cnvs[['chr','b','e']].copy()
-            #cnvs = cnvs.drop(columns=['chr','b','e']).transpose()
-        boundaries=pd.read_csv(input[1],header=0,index_col=None)
-        boundaries=boundaries.rename(columns={'':'bin'})
-        
-        boundaries['bin']=boundaries.index
-        boundaries=boundaries.rename(columns={'Chr':'chr'})
+## fig5a - dok
+rule pheatmap_buoni:
+    input: correlation_matrix="../local/data/LMX-LMO_correlation_buoni.tsv.gz"
+    output: pheatmap="pheatmap_correlation_buoni.pdf"
+    script: SRC_DIR+'/pheatmap.R'
 
-        chr_limits = boundaries.index[boundaries['bin'].isin(boundaries.groupby('chr', sort=False)['bin'].max().values)].tolist()
-        i = 0
-        chr_limits = []
-        last = ""
-        for index, row in boundaries.iterrows():
-            if last != "" and last != row['chr']:
-                chr_limits.append(i-1)
-            last = row['chr']
-            i = i + 1        
-        chr_limits.append(i-1)
+## fig5b - dok
+rule sankey_cms:
+    input: "../local/data/reorder_model_cms_validated.tsv"
+    output: html="sankey_model_cms_validated_coppie_simo.html"
+    script: SRC_DIR+"/sankey_classification.R"
 
-        chr_boundaries = np.append(0, chr_limits)
-        chr_list = boundaries['chr'].unique().tolist()
-        chrN_list = []
-        print(chr_boundaries)
-        for x in chr_list:
-            x = x[3:] #remove 'chr' for readability
-            chrN_list.append(x)
-        #compute the position where chromosome labels will be placed on the plots
-        start = 0
-        pos_list = []
-        for end in chr_limits:
-            pos_list.append((start+end)/2)
-            start = end+1
+rule sankey_cris:
+    input: "../local/data/vsd_model_cris-right_validated.tsv"
+    output: html="vsd_sankey_model_simo_cris_validated.html"
+    script: SRC_DIR+"/sankey_classification.R"
 
-        yticklabels = False
+## figure 6
 
-        #cbar_kws={"ticks": np.arange(0,13,1)}
-        maxv = cnvs.max().max()
-        minv = cnvs.min().min()
-        cmap_dict ={0:'white',1:'red', 2:"blue"}
-        cmap = ListedColormap([cmap_dict[i] for i in range(3)])
-        
-        f, culo = plt.subplots()
-        h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = True, cmap=cmap,robust=True, rasterized=True,cbar=False,vmin=minv,vmax=maxv)# cbar_kws=cbar_kws)
-        #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='RdBu_r', robust=True, center=0)# cbar_kws=cbar_kws)
-        #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='bwr', vmax=maxv, vmin=minv, center=0)# cbar_kws=cbar_kws)
-        #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='coolwarm', robust=True, center=0)# cbar_kws=cbar_kws)
-        #Z = h.dendrogram_row.linkage
-        ax = h.ax_heatmap
-        h.cax.set_visible(False)
-		#ax.set_rasterization_zordeset_rasterization_zorderr(1)
-        #place vertical lines to identify chromosomes
-        for pos in chr_limits:
-            ax.axvline(x=pos, color='black', linewidth=0.3)
+## fig6a - dok
+rule plot_CTG_imaging:
+    input: pdo_cetuxi = "../local/data/pdo_cetuxi_buoni.tsv",  Rimage='../local/data/theme_5.Rdata'
+    output: pic_legend = "CTG_vs_Imaging_legend.pdf", pic_square = "CTG_vs_Imaging.pdf", cors="CTG_vs_Imaging.tsv"
+    script: SRC_DIR+"/ctg_imaging_plot.R"
 
-        #place chromosome ticks at the right position
-        ax.xaxis.set_major_locator(ticker.FixedLocator((pos_list)))
-       
-        ax.xaxis.set_major_formatter(ticker.FixedFormatter((chrN_list)))
-        h.ax_heatmap.set_yticklabels(h.ax_heatmap.get_ymajorticklabels(), fontsize = 6)
-        ax.tick_params(axis='x', rotation=0, labelsize=5)
-        ax.xaxis.set_minor_locator(ticker.FixedLocator(chr_boundaries))
-        ax.tick_params(axis='x', length=8, which='minor')
-        
-        
-       
-        # add legend
-        box = culo.get_position()
-        #culo.set_position([box.x0, box.y0, box.width * 0.3, box.height])
-        legend_ax = h.fig.add_axes([0, 0, 0.1, 0.6])
-        legend_ax.axis('off')
-        # reconstruct color map
-        colors = [cmap_dict[i] for i in range(3)]
-        # add color map to legend
-        patches = [mpatches.Patch(facecolor=c, edgecolor=c) for c in colors]
-        value_to_int={'NO':0,'GAINED':1, 'LOSS':2}
-        legend = legend_ax.legend(patches,
-            value_to_int.keys(),
-            handlelength=0.8, loc='upper left')
-        for t in legend.get_texts():
-            t.set_ha("left")
+## fig6b - dok
+rule scatterplot_annot_targeted:
+    input: x="../local/data/pdo_cetuxi_buoni.tsv", y="../local/data/cetuxi_perc_w3_buoni.tsv", mut="../local/data/preprocGeneAF_0.05.Rdata", cn="../local/data/binarized_cn.tsv",
+            Rimage='../local/data/theme_5.Rdata'
+    output: plot='scatter_targeted.pdf', stats="scatter_targeted.tsv", annot="targeted_annot.tsv", annot_whole="targeted_annot_whole.tsv"
+    params: tool=SRC_DIR+'/scatter_annotated_targeted.R', prefix="CTG", merge="case", yname="Cetuximab_dVw3"
+    shell:
+         """
+             {params.tool} {input.x} {input.y} {output.plot} {params.prefix} {params.merge} {params.yname} {input.mut} {input.cn} {input.Rimage} {output.stats} {output.annot} {output.annot_whole}
+         """
 
-        #ax.set_xlabel("Chromosomes", fontweight='bold', fontsize=25)
-        #ax.set_ylabel("Clones", fontsize=25, fontweight='bold')
-        # A4 is 8-1/4 x 11-3/4 in
-        plt.gcf().set_size_inches(7, 3.8) # w, h
-        # cannot find a way to get tolerable linewidth cause linewidth parameter seem to be ignored, will
-        # scale by hand
-        #plt.gcf().set_size_inches(37, 21)
-        plt.savefig(output[0], dpi=300)
-        plt.clf()
+## fig6c - dok
+# auc_all.pdf is the figure panel.
+rule auc_r:
+    input: input_auc="../local/data/input_auc.tsv", targeted_annot="../local/data/targeted_annot.tsv"
+    output: auc_all="auc_all.pdf", auc_wt="auc_wt.pdf", sens_table="sens_table.tsv"
+    log: log="auc.log"
+    script: SRC_DIR+"/roc_auc.R"
+
+## fig6d - dok but TODO get the right one with bars not the correlation
+rule ctg_vs_crispr:
+    input: cetuxi='../local/data/pdo_cetuxi.tsv', crispr="../local/data/EGFR_ds_avg.tsv",
+           Rimage='../local/data/theme_5.Rdata', annot='../local/data/targeted_annot_whole.tsv'
+    output: plot="EGFR_CTG_5000_cor.pdf", plot_legend="EGFR_CTG_5000_cor.legend.pdf"
+    log: log="EGFR_CTG_5000_cor.log"
+    script: SRC_DIR+"/EGFR_cetuxi_cor.R"
+
+## figure 7
+
+## fig7a
+rule coerenza_deg_ox:
+    input: pdo="../local/data/treat_cutoff0.05-cetuxi.vs.NT.deseq2_pdo.tsv", pdx="../local/data/treat_cutoff0.05-cetuxi.vs.NT.deseq2_pdx.tsv", Rimage='../local/data/theme_5.Rdata'
+    output: pdf="biobanca_cor_ctx_raster.pdf"
+    script: SRC_DIR+"/coerenza_dex_x_o.R"
+
+## fig7b
+rule heatmap_score:
+    input: max_inh="../local/data/max_drug_value.tsv", drug_targets="../local/data/targets_drug_screening.xlsx"
+    output: heatmap="heatmap_max_inhibition_score.pdf"
+    script: SRC_DIR+"/heatmaps_drug_screening_novalue.R"

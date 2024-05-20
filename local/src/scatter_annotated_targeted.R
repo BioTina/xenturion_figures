@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 library(ggplot2)
 args <- commandArgs(trailingOnly = T)
 x <- args[1]
