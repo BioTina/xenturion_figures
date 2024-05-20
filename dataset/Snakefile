@@ -1,5 +1,4 @@
-PRJ_ROOT="/scratch/trcanmed/git_biobanca"
-SRC_DIR=PRJ_ROOT+"/local/src"
+SRC_DIR="../local/src/"
 
 ## figure 1
 
@@ -188,7 +187,7 @@ rule all_clones_plot:
 
 ## figure 4
 
-## fig4a
+## fig4a # testOK nodocker
 rule pheatmap_buoni:
     input: correlation_matrix="../local/data/LMX-LMO_correlation_buoni.tsv.gz"
     output: pheatmap="pheatmap_correlation_buoni.pdf"
