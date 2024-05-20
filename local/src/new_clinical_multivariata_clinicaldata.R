@@ -2,11 +2,13 @@
 
 library(tidyverse)
 library(sjPlot)
+library(openxlsx)
 
 cl_f <- snakemake@input[["clinical_data"]]
 buoni_f <- snakemake@input[["pdo"]]
 fra_f <- snakemake@input[["mut"]]
 lmh_f <- snakemake@input[["umani"]]
+msi_f <- snakemake@input[["msi"]]
 res_circos <- snakemake@output[["df_circos"]]
 plot_fit <- snakemake@output[["fit_plot"]]
 res_fit <- snakemake@output[["results_fit"]]
@@ -163,9 +165,24 @@ res$STAGE <- as.numeric(res$STAGE)
 
 res$THERAPY.BEFORE.COLLECTION..Y.N. <- as.factor(res$THERAPY.BEFORE.COLLECTION..Y.N.)
 
+#msi_fra <- "/scratch/trcanmed/biobanca/local/share/data/MSIstatus.xlsx"
+msi <- read.xlsx(msi_f)
+msi$N <- NULL
+msi$model <- substr(msi$Genealogy.ID, 1, 7)
+msi$status <- gsub("\\*", "", msi$status)
+msi$Genealogy.ID <- NULL
+names(msi)[names(msi)=="model"] <- "CASE"
+rownames(msi) <- msi$CASE
+msi$CASE <- NULL
+
+for (i in rownames(msi)) {
+  res[i, "MSI_MSS"] <- msi[i, "status"]
+}
+
 is.na(res$MSI_MSS) <- NA
 res$MSI_MSS <-  gsub('NT', NA, res$MSI_MSS)
 res$MSI_MSS <- as.factor(res$MSI_MSS)
+res$MSI_MSS <- gsub("-H", "", res$MSI_MSS)
 
 res$derivation_type <- as.factor(res$derivation_type)
 
@@ -209,7 +226,7 @@ dev.off()
 fit <- as.data.frame(summary.glm(fit.full)$coefficients)
 ## intervallo di confidenza
 conf_intervals <- confint(fit.full)
-fit2 <- cbind(fit, conf_intervals)
+fit2 <- cbind(fit, exp(conf_intervals))
 ## odds ratio
 # Obtain coefficients
 coefficients <- coef(fit.full)

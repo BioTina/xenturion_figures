@@ -4,7 +4,9 @@ SRC_DIR="../local/src/"
 
 ## fig1f
 rule multivariata_clinical_data:
-    input: clinical_data = "../local/data/clinical_data_done_revision020424.tsv", pdo="../local/data/whoiswho_validation_xen_revision_derivation.tsv", mut = "../local/data/fra_mutational_annotation.tsv", umani = "../local/data/lmh_detele_multivariate.tsv"
+    input: clinical_data = "../local/data/clinical_data_done_revision020424.tsv", pdo="../local/data/whoiswho_validation_xen_revision_derivation.tsv", 
+           mut = "../local/data/fra_mutational_annotation.tsv", umani = "../local/data/lmh_detele_multivariate.tsv", 
+           msi="../local/data/MSIstatus.xlsx"
     output: df_circos = "clinical_data_for_circos.tsv", fit_plot = "plot_fit_validated.pdf", results_fit = "result_fit.tsv"
     log: log="clinical_data_for_circos.tsv.log"
     script: SRC_DIR+'/new_clinical_multivariata_clinicaldata.R'

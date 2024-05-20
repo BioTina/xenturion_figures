@@ -72,16 +72,16 @@ m2[is.na(m2$pdo_freq),]$pdo_freq <- 0
 
 cl <- c(rep('tcga',nrow(m2)), rep('msk',nrow(m2)))
 
-m3 <- data.frame(x=c(m2$pdo_freq, m2$pdo_freq), 
-                 y=c(m2$tcga_freq, m2$msk_freq), 
+m3 <- data.frame(y=c(m2$pdo_freq, m2$pdo_freq), 
+                 x=c(m2$tcga_freq, m2$msk_freq), 
                  class=cl)
 
-lmplot <- function(data, title, xlim=NULL, out) {
+lmplot <- function(data, title, xlim=NULL, out, ocoefs=NULL) {
   fit1 <- data[data$class=='tcga',]
   fit2 <- data[data$class=='msk',]
   pi1 <- cor.test(fit1$x, fit1$y)
   pi2 <- cor.test(fit2$x, fit2$y)
-  
+  res <- NULL
   cap1 <- c(pi1$estimate, pi1$p.value, pi2$estimate, pi2$p.value)
   sink(log_f, append=TRUE)
   print(cap1)
@@ -95,36 +95,46 @@ lmplot <- function(data, title, xlim=NULL, out) {
     linedata <- data.frame(x = c(0.2, 0.4, 0.2, 0.4),
                            y = c(0.2, 0.3, 0, 0),
                            id = c("a", "a", "b", "b"))
+    fit <- lm(data=data, formula=as.formula('y~x'))
+    coefs <- coef(fit)
+    res <- coefs
     gg <- ggplot(data=data, aes(x=x, y=y))+ geom_point(aes(color=class), size=0.1)+ 
-    geom_smooth(method=lm, se=FALSE, size=0.1)+xlim(0, 0.2)+ylim(0,0.2)+unmute_theme+theme(legend.position ="none")+
+    #geom_smooth(method=lm, se=FALSE, size=0.1) #  geom_smooth is impacted by xlim and ylim
+    geom_abline(size=0.1, color='blue', slope=coefs["x"], intercept=coefs["(Intercept)"])+
+    xlim(0, 0.2)+ylim(0,0.2)+unmute_theme+theme(legend.position ="none")+
     scale_color_manual(values=c('seagreen', 'plum3'))+theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(), axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank())
 
-    p <- ggplot(data=data, aes(x=x, y=y))+ geom_point(aes(color=class), size=0.3)+ geom_smooth(method=lm, se=FALSE, size=0.3)+
+    p <- ggplot(data=data, aes(x=x, y=y))+ geom_point(aes(color=class), size=0.3)+# geom_smooth(method=lm, se=FALSE, size=0.3)+
+         geom_abline(size=0.3, color='blue', slope=coefs["x"], intercept=coefs["(Intercept)"])+
          unmute_theme+ggtitle(title)+
-         xlab('Frequency TCGA/MSK') + ylab('Frequency models')+scale_color_manual(values=c('seagreen', 'plum3'))
+         xlab('Frequency TCGA/MSK') + ylab('Frequency models')+scale_color_manual(values=c('seagreen', 'plum3'))+xlim(c(0,0.8))+ylim(c(0, 0.8))
     p + geom_path(data = polydata, aes(x, y), size=0.3, color="darkgrey") +
       geom_line(data = linedata, color="darkgrey", size=0.3, aes(x, y, group = id),
                 linetype = "dashed")+annotation_custom(grob=ggplotGrob(gg), xmin=0.35, xmax=0.65, ymin=-0.05, ymax=0.3)+
                 theme(legend.position ="none")
   } else {
-    ggplot(data=data, aes(x=x, y=y, color=class))+ geom_point()+ geom_smooth(method=lm, se=FALSE)+
-    unmute_theme+labs(caption=cap)+ggtitle(title)+xlim(xlim)+
+    ggplot(data=data, aes(x=x, y=y))+ geom_point(aes(color=class)) + # geom_smooth(method=lm, se=FALSE)+
+    geom_abline(color='blue', slope=ocoefs["x"], intercept=ocoefs["(Intercept)"])+
+    unmute_theme+labs(caption=cap)+ggtitle(title)+xlim(xlim)+ylim(xlim)+
+    theme(axis.ticks = element_blank(), axis.text.y=element_blank(), axis.title=element_blank(), axis.text.x=element_blank())+
     scale_color_manual(values=c('seagreen', 'plum3'))
 
   }
   ggsave(out, height=60, width=60, units="mm")
+  return(res)
 }
 
-lmplot(m3, title='PDO', out=tcgamsk_pdo_f)
-lmplot(m3, title='PDO', xlim=c(0, 0.2), out=tcgamsk_pdo_zoom_f)
+coefs <- lmplot(m3, title='PDO', out=tcgamsk_pdo_f)
+lmplot(m3, title='PDO', xlim=c(0, 0.2), out=tcgamsk_pdo_zoom_f, ocoefs=coefs)
 
-m3 <- data.frame(x=c(m2$pdx_freq, m2$pdx_freq), 
-                 y=c(m2$tcga_freq, m2$msk_freq), 
+m3 <- data.frame(y=c(m2$pdx_freq, m2$pdx_freq), 
+                 x=c(m2$tcga_freq, m2$msk_freq), 
                  class=cl)
-lmplot(m3, title='PDX', out=tcgamsk_xeno_f)
-lmplot(m3, title='PDX', xlim=c(0, 0.2), out=tcgamsk_xeno_zoom_f)
+coefs <- lmplot(m3, title='PDX', out=tcgamsk_xeno_f)
+lmplot(m3, title='PDX', xlim=c(0, 0.2), out=tcgamsk_xeno_zoom_f, ocoefs=coefs)
+
 
 
 save.image(savedata)

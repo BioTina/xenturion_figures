@@ -12,7 +12,6 @@ mw_f <- snakemake@output[['mw']]
 
 load(snakemake@input[['Rimage']])
 
-#save.image("paperoga.Rdata")
 # we need to fill with 0 missing muts
 thr <- 0.05
 m1 <- merge(pdx, pdo, all.x = TRUE, all.y = TRUE, by='row.names')
@@ -58,8 +57,24 @@ all <- as.numeric(unlist(pearson2))
 all <- all[!is.na(all)]
 #all <- upper.tri(pearson, diag = FALSE) # this is not a simmetric matrix!
 sink(mw_f)
+print('mean:')
 mean(diag)
 mean(all)
+print('sd:')
+sd(diag)
+sd(all)
+print('min:')
+min(diag)
+min(all)
+print('max:')
+max(diag)
+max(all)
+print('median:')
+median(diag)
+median(all)
+print('summary:')
+summary(diag)
+summary(all)
 sink()
 
 pdata <- data.frame(pearson=c(all, diag), type=c(rep('unmatched', length(all)),rep('matched', length(diag))))

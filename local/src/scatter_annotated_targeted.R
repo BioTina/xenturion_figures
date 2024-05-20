@@ -1,4 +1,3 @@
-#!/usr/bin/env Rscript
 library(ggplot2)
 args <- commandArgs(trailingOnly = T)
 x <- args[1]
@@ -47,7 +46,6 @@ uniqued_mut <- ifelse(uniqued_mut, 'MUT', 'WT')
 bin_cn <- as.data.frame(apply(cn, 2, function(x) {ifelse(x, 'AMPL', 'WT')}))
 bin_cn <- bin_cn[, colnames(bin_cn) %in% c('ERBB2'), drop=FALSE]
 
-save.image('pluto.Rdata')
 uniqued_mut_w <- as.data.frame(uniqued_mut)
 infofour <- apply(uniqued_mut_w[,c('KRAS', 'BRAF', 'NRAS')], 1, function(x) {any(x!="WT")})
 infofour <- ifelse(is.na(infofour),  FALSE, infofour)
