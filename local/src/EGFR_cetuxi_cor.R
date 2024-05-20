@@ -8,9 +8,9 @@ Rimage_f <- snakemake@input[['Rimage']]
 log_f <- snakemake@log[['log']]
 out_plot_f <- snakemake@output[['plot']]
 out_plotlegend_f <- snakemake@output[['plot_legend']]
-col_cetuxi <- "CTG_5000"
-#out_barplot_f <- snakemake@output[['barplot_legend']]
-#out_barplotnol_f <- snakemake@output[['barplot']]
+col_cetuxi <- snakemake@wildcards[['CTG']]
+out_barplot_f <- snakemake@output[['barplot_legend']]
+out_barplotnol_f <- snakemake@output[['barplot']]
 
 load(Rimage_f)
 
@@ -64,21 +64,21 @@ ylim.sec <- c(min(merged_annot$sort), max(merged_annot$sort))    # in this examp
 b <- diff(ylim.prim)/diff(ylim.sec)
 a <- ylim.prim[1] - b*ylim.sec[1]
 
-# gplot <- ggplot(data=merged_annot, aes(x=reorder(smodel, sort), y=ko_score, fill=alterations))+geom_col()+
-#   unmute_theme +
-#   xlab('cetuximab viability') +
-#   ylab('EGFR avg ko score') +
-#   scale_fill_manual(values=c('darkorange', 'darkred', 'grey40')) +
-#   labs(color="Relevant somatic alterations") +
-#   #scale_y_continuous(sec.axis = sec_axis(~ ., name="CTX treated/untreated luminescence ratio")) +
-#   scale_y_continuous(breaks=c(-0.25, 0, 0.25, 0, 0.50, 0.75, 1), limits=c(-0.25, 1),
-#     sec.axis = sec_axis(~ (. - a)/b, name="CTX treated/untreated luminescence ratio")) +
-#   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-#   #geom_point(aes_string(y=col_cetuxi), size=0.3)
-#   geom_point(aes(y=a+sort*b), size=0.3)
+gplot <- ggplot(data=merged_annot, aes(x=reorder(smodel, sort), y=ko_score, fill=alterations))+geom_col()+
+  unmute_theme +
+  xlab('cetuximab viability') +
+  ylab('EGFR avg ko score') +
+  scale_fill_manual(values=c('darkorange', 'darkred', 'grey40')) +
+  labs(color="Relevant somatic alterations") +
+  #scale_y_continuous(sec.axis = sec_axis(~ ., name="CTX treated/untreated luminescence ratio")) +
+  scale_y_continuous(breaks=c(-0.25, 0, 0.25, 0, 0.50, 0.75, 1), limits=c(-0.25, 1),
+    sec.axis = sec_axis(~ (. - a)/b, name="CTX treated/untreated luminescence ratio")) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  #geom_point(aes_string(y=col_cetuxi), size=0.3)
+  geom_point(aes(y=a+sort*b), size=0.3)
 
-# save.image('dolore.Rdata')
-# ggsave(out_barplot_f, plot=gplot, height=2.5, width=2.5, units='in')
+save.image('dolore.Rdata')
+ggsave(out_barplot_f, plot=gplot, height=2.5, width=2.5, units='in')
 
-# gplot_nol <- gplot + theme(legend.position = "none")
-# ggsave(out_barplotnol_f, plot=gplot_nol, height=2.5, width=2.5, units='in')
+gplot_nol <- gplot + theme(legend.position = "none")
+ggsave(out_barplotnol_f, plot=gplot_nol, height=2.5, width=2.5, units='in')
