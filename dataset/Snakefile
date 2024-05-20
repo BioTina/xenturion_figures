@@ -160,7 +160,11 @@ rule gistic_vs_msk_thresholded_genes:
     script: SRC_DIR+'/gistic_genes_thr_vs_msk.R'
 
 ## figure 4
-## fig4a - TODO jaccard early-late
+## fig4a - dok
+rule jaccard_mut_sim_early_late:
+    input: Rimage='../local/data/earlylate_preprocGeneAF_0.05.Rdata'
+    output: pheat="earlylate_jaccard_heat_0.05.pdf", jac_f="earlylate_jac_matrix_0.05.tsv", mw="earlylate_jac_MW_0.05.txt"
+    script: SRC_DIR+"/jaccard_mut.R"
 
 ## fig4b - CN early late - dok
 rule heatmap_cnv:
