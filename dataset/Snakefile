@@ -282,7 +282,7 @@ rule heatmap_cnv:
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
-# fig 4Y - TODO FIXME?? everything is marked blue as loss_loh
+# fig4c - TODO FIXME?? everything is marked blue as loss_loh
 rule pdxts_early_late:
     input:d='../local/data/heatmap_100000.csv',annotation='../local/data/annotation_100000.csv'
     output: out='heatmap_loh_events_100000_pdxts_early_late.pdf'
@@ -472,12 +472,13 @@ rule auc_r:
     log: log="auc.log"
     script: SRC_DIR+"/roc_auc.R"
 
-## fig6d - dok but TODO get the right one with bars not the correlation
+## fig6d - dok
+# the panel is EGDR_CTG_barplot.pdf
 rule ctg_vs_crispr:
     input: cetuxi='../local/data/pdo_cetuxi.tsv', crispr="../local/data/EGFR_ds_avg.tsv",
-           Rimage='../local/data/theme_5.Rdata', annot='../local/data/targeted_annot_whole.tsv'
-    output: plot="EGFR_CTG_5000_cor.pdf", plot_legend="EGFR_CTG_5000_cor.legend.pdf"
-    log: log="EGFR_CTG_5000_cor.log"
+           Rimage='../local/data/theme_5.Rdata', annot='targeted_annot_whole.tsv'
+    output: plot="EGFR_CTG_cor.pdf", plot_legend="EGFR_CTG_cor.legend.pdf", barplot="EGFR_CTG_barplot.pdf", barplot_legend="EGFR_CTG_barplot_legend.pdf"
+    log: log="EGFR_CTG_cor.log"
     script: SRC_DIR+"/EGFR_cetuxi_cor.R"
 
 ## figure 7

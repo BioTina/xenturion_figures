@@ -8,7 +8,7 @@ Rimage_f <- snakemake@input[['Rimage']]
 log_f <- snakemake@log[['log']]
 out_plot_f <- snakemake@output[['plot']]
 out_plotlegend_f <- snakemake@output[['plot_legend']]
-col_cetuxi <- snakemake@wildcards[['CTG']]
+col_cetuxi <-  'CTG_5000'
 out_barplot_f <- snakemake@output[['barplot_legend']]
 out_barplotnol_f <- snakemake@output[['barplot']]
 
@@ -77,7 +77,6 @@ gplot <- ggplot(data=merged_annot, aes(x=reorder(smodel, sort), y=ko_score, fill
   #geom_point(aes_string(y=col_cetuxi), size=0.3)
   geom_point(aes(y=a+sort*b), size=0.3)
 
-save.image('dolore.Rdata')
 ggsave(out_barplot_f, plot=gplot, height=2.5, width=2.5, units='in')
 
 gplot_nol <- gplot + theme(legend.position = "none")
