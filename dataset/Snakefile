@@ -26,7 +26,7 @@ rule jaccard_mut_sim:
     output: pheat="jaccard_heat_0.05.pdf", jac_f="jac_matrix_0.05.tsv", mw="jac_MW_0.05.txt"
     script: SRC_DIR+"/jaccard_mut.R"
 
-## fig2c - TODO
+## fig2c - dok
 rule freqs_tcga_msk:
     input: pdoTiers="../local/data/pdo_tiers.tsv", xenoTiers="../local/data/xeno_tiers.tsv",
             xenoGenes="../local/data/merged_table_nomultiallele_wtiers_annot_pdx",
@@ -44,9 +44,9 @@ rule freqs_tcga_msk:
 
 ## figure 3
 
-## fig3a - TODO diverso aspetto?
+## fig3a - dok
 rule obtain_density_plot_wilcox:
-    input: res="../local/data/LMX-LMO_correlation_buoni.tsv.gz"
+    input: res="../local/data/validated_pearson_xo.tsv"
     output: density_plot = "density_f_buoni.pdf", wilcox_result ="wilcox_buoni"
     script: SRC_DIR+'/matched_unmatched_plot_wilcox.R'
 

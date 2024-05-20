@@ -15,7 +15,7 @@ tcgamsk_xeno_zoom_f <- snakemake@output[['TCGAMSK_xeno_zoom']]
 tcgamsk_pdo_zoom_f <- snakemake@output[['TCGAMSK_pdo_zoom']]
 savedata <- snakemake@output[['preprocGeneAF']]
 
-thr <- as.numeric(snakemake@wildcards[['AF']])
+thr <- 0.05
 
 osnakemake <- snakemake
 load(snakemake@input[['Rimage']])
@@ -32,6 +32,7 @@ gpdo <- read.table(pdo_genes, header=TRUE, sep="\t", row.names=1)
 #gpdx <- read.table('./mutect/merged.table_nomultiallele_wtiers', header=TRUE, sep="\t", row.names=1)
 #gpdo <- read.table('../biobanca_targeted_pdo/mutect/merged.table_nomultiallele_wtiers', header=TRUE, sep="\t", row.names=1)
 
+save.image('p.Rdata')
 ###
 
 #all_genes <- intersect(unique(gpdo$genes), unique(gpdx$genes)) # y?
