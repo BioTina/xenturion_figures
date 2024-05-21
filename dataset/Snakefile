@@ -288,7 +288,7 @@ rule heatmap_cnv:
 
 # fig4c - TODO FIXME?? everything is marked blue as loss_loh
 rule pdxts_early_late:
-    input:d='../local/data/heatmap_100000.csv',annotation='../local/data/annotation_100000.csv'
+    input:d='../local/data/loh_heatmap_100000.csv',annotation='../local/data/loh_annotation_100000.csv'
     output: out='heatmap_loh_events_100000_pdxts_early_late.pdf'
     run:
         import numpy as np
