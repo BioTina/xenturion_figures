@@ -1,0 +1,31 @@
+col	value	color	order
+derivation_type	Derivation failed	#00aeef	1
+derivation_type	Derivation successful	#c0c000	1
+buoni	Successful	#26A63A	2
+buoni	Failed	black	2
+buoni	BNot performed	grey	2
+AGE.AT.COLLECTION	numeric	minus_Inferno	11
+SEX	M	blue3	10
+SEX	F	lightpink2	10
+SEX	NA	grey	10
+SITE.OF.PRIMARY	LEFT COLON	#C7A76C	3
+SITE.OF.PRIMARY	RIGHT COLON	#5CBD92	3
+SITE.OF.PRIMARY	NA	grey	3
+THERAPY.BEFORE..Y.N.	Y	#557A47	5
+THERAPY.BEFORE..Y.N.	N	#C2EFB4	5
+THERAPY.BEFORE..Y.N.	NA	grey	5
+KRAS	True	#8E063B	7
+KRAS	False	#023FA5	7
+NRAS	True	#8E063B	8
+NRAS	False	#023FA5	8
+BRAF	True	#8E063B	9
+BRAF	False	#023FA5	9
+STAGE	1	#9FCEBA	4
+STAGE	2	#64A79A	4
+STAGE	3	#1B817F	4
+STAGE	4	#005D67	4
+STAGE	NA	grey	4
+MSI_MSS	MSI	#0FCFC0	6
+MSI_MSS	MSS	#F79CD4	6
+MSI_MSS	NA	grey	6
+

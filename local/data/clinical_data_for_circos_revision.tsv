@@ -1,0 +1,244 @@
+CASE	AGE.AT.COLLECTION..years.	SEX	SITE.OF.PRIMARY	STAGE	THERAPY.BEFORE.COLLECTION..Y.N.	KRAS	BRAF	NRAS	MSI_MSS	buoni	derivation_type	AGE.AT.COLLECTION
+CRC0014	70	M	LEFT COLON	2	Y	False	False	False	MSS	Not established	Derivation failed	70
+CRC0018	59	F	LEFT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	59
+CRC0019	82	M	RIGHT COLON	4	N	True	False	False	MSS	Not established	Derivation failed	82
+CRC0022	73	M	LEFT COLON	3	Y	False	False	True	MSS	Validation successful	Derivation successful	73
+CRC0028	67	M	RIGHT COLON	2	N	True	False	False	MSS	Not established	Derivation failed	67
+CRC0029	62	F	LEFT COLON	4	N	False	False	False	MSS	Validation failed	Derivation successful	62
+CRC0030	68	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	68
+CRC0031	46	F	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	46
+CRC0051	55	F	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	55
+CRC0055	58	F	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	58
+CRC0058	53	M	LEFT COLON	4	N	True	False	False	MSS	Not established	Derivation failed	53
+CRC0059	81	F	LEFT COLON	2	N	False	False	False	MSS	Validation successful	Derivation successful	81
+CRC0063	63	M	LEFT COLON	4	N	True	False	False	MSS	Validation failed	Derivation successful	63
+CRC0064	71	F	RIGHT COLON	3	Y	True	False	False	MSS	Not established	Derivation failed	71
+CRC0065	45	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	45
+CRC0066	68	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	68
+CRC0067	65	M	LEFT COLON	3	Y	False	False	True	MSS	Not established	Derivation failed	65
+CRC0068	61	F	LEFT COLON	4	N	True	False	False	MSS	Not established	Derivation failed	61
+CRC0069	69	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	69
+CRC0072	75	M	LEFT COLON	4	N	True	False	False	MSS	Not established	Derivation failed	75
+CRC0076	70	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	70
+CRC0077	73	F	RIGHT COLON	4	N	True	False	False	MSS	Not established	Derivation failed	73
+CRC0078	56	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	56
+CRC0079	45	M	LEFT COLON	3	Y	False	True	False	MSS	Validation successful	Derivation successful	45
+CRC0080	53	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	53
+CRC0081	62	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC0095	67	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	67
+CRC0096	50	F	RIGHT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	50
+CRC0097	71	F	RIGHT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	71
+CRC0099	59	M	LEFT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	59
+CRC0103	75	F	LEFT COLON	2	N	False	False	False	MSS	Validation successful	Derivation successful	75
+CRC0104	64	F	RIGHT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	64
+CRC0106	60	M	RIGHT COLON	4	Y	False	True	False	MSI	Not established	Derivation failed	60
+CRC0110	54	M	LEFT COLON	3	Y	True	False	False	MSS	Validation failed	Derivation successful	54
+CRC0114	48	F	RIGHT COLON	4	Y	True	False	False	MSS	Validation failed	Derivation successful	48
+CRC0116	62	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC0118	69	M	LEFT COLON	4	Y	False	True	False	MSI	Not established	Derivation failed	69
+CRC0119	74	M	RIGHT COLON	3	Y	True	False	False	MSS	Validation failed	Derivation successful	74
+CRC0121	63	M	LEFT COLON	3	Y	False	False	False	MSS	Not established	Derivation failed	63
+CRC0123	78	M	LEFT COLON	2	N	True	False	False	MSS	Validation successful	Derivation successful	78
+CRC0124	62	F	RIGHT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC0125	51	F	LEFT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	51
+CRC0134	65	M	RIGHT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	65
+CRC0137	72	F	LEFT COLON	2	N	False	False	False	MSS	Validation successful	Derivation successful	72
+CRC0148	75	M	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	75
+CRC0150	69	M	RIGHT COLON	3	Y	False	False	True	MSS	Validation successful	Derivation successful	69
+CRC0151	59	F	LEFT COLON	3	Y	False	False	False	MSS	Validation successful	Derivation successful	59
+CRC0152	60	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	60
+CRC0161	51	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	51
+CRC0166	62	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC0169	66	F	LEFT COLON	3	N	True	False	False	MSS	Validation successful	Derivation successful	66
+CRC0171	59	M	RIGHT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	59
+CRC0175	64	M	LEFT COLON	4	Y	True	False	False	MSS	Not established	Derivation failed	64
+CRC0177	60	F	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	60
+CRC0185	58	M	LEFT COLON	4	Y	False	False	False	MSS	Not established	Derivation failed	58
+CRC0186	52	F	LEFT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	52
+CRC0188	70	M	RIGHT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	70
+CRC0196	67	M	LEFT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	67
+CRC0197	57	F	LEFT COLON	4	N	False	False	False	MSS	Validation not performed	Derivation successful	57
+CRC0199	65	F	RIGHT COLON	4	Y	False	False	False	MSS	Not established	Derivation failed	65
+CRC0202	77	M	LEFT COLON	3	N	False	False	False	MSS	Validation failed	Derivation successful	77
+CRC0204	50	F	RIGHT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	50
+CRC0231	62	M	LEFT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	62
+CRC0252	64	M	RIGHT COLON	2	N	False	False	False	MSS	Validation failed	Derivation successful	64
+CRC0254	48	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	48
+CRC0257	69	F	LEFT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	69
+CRC0262	64	M	LEFT COLON	4	N	False	False	False	MSS	Not established	Derivation failed	64
+CRC0277	NA	NA	NA	NA	NA	True	False	False	MSS	Validation successful	Derivation successful	NA
+CRC0285	63	M	LEFT COLON	3	Y	False	False	False	MSS	Validation successful	Derivation successful	63
+CRC0291	71	M	RIGHT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	71
+CRC0297	47	M	LEFT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	47
+CRC0306	63	M	LEFT COLON	4	Y	False	False	False	MSS	Not established	Derivation failed	63
+CRC0312	65	M	RIGHT COLON	3	Y	True	False	False	MSS	Not established	Derivation failed	65
+CRC0316	66	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	66
+CRC0322	56	NA	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	56
+CRC0327	62	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC0330	51	F	LEFT COLON	3	Y	True	False	NA	MSS	Not established	Derivation failed	51
+CRC0344	56	M	LEFT COLON	1	Y	True	False	False	MSS	Not established	Derivation failed	56
+CRC0355	56	M	LEFT COLON	4	N	False	False	False	MSI	Validation successful	Derivation successful	56
+CRC0370	58	M	RIGHT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	58
+CRC0379	64	M	LEFT COLON	4	N	False	False	False	MSS	Validation not performed	Derivation successful	64
+CRC0382	76	M	LEFT COLON	3	Y	True	False	NA	MSS	Not established	Derivation failed	76
+CRC0399	65	F	RIGHT COLON	3	Y	False	False	False	MSS	Validation successful	Derivation successful	65
+CRC0404	72	M	RIGHT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	72
+CRC0438	70	F	RIGHT COLON	3	Y	True	False	False	MSS	Validation not performed	Derivation successful	70
+CRC0441	87	M	LEFT COLON	3	Y	False	False	False	MSS	Validation successful	Derivation successful	87
+CRC0456	53	F	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	53
+CRC0464	81	M	LEFT COLON	1	N	True	False	False	MSS	Validation successful	Derivation successful	81
+CRC0475	74	M	RIGHT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	74
+CRC0479	47	F	RIGHT COLON	2	N	True	False	False	MSS	Validation failed	Derivation successful	47
+CRC0484	57	M	LEFT COLON	4	N	False	False	False	MSS	Not established	Derivation failed	57
+CRC0508	58	F	RIGHT COLON	2	Y	False	False	False	MSS	Not established	Derivation failed	58
+CRC0515	55	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	55
+CRC0534	52	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	52
+CRC0542	66	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	66
+CRC0544	75	M	RIGHT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	75
+CRC0568	55	F	LEFT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	55
+CRC0572	52	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	52
+CRC0578	NA	NA	NA	NA	NA	False	False	False	NA	Validation successful	Derivation successful	NA
+CRC0591	54	F	LEFT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	54
+CRC0680	71	M	LEFT COLON	4	Y	False	False	False	MSS	Not established	Derivation failed	71
+CRC0718	55	M	LEFT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	55
+CRC0729	63	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	63
+CRC0740	62	F	RIGHT COLON	4	N	False	False	False	MSS	Not established	Derivation failed	62
+CRC0743	62	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC0772	70	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	70
+CRC1078	61	F	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	61
+CRC1083	68	F	LEFT COLON	2	Y	True	False	False	MSS	Not established	Derivation failed	68
+CRC1090	70	F	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	70
+CRC1139	58	F	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	58
+CRC1145	81	F	LEFT COLON	2	N	False	False	False	MSS	Validation successful	Derivation successful	81
+CRC1146	54	F	LEFT COLON	2	N	False	False	False	MSS	Validation not performed	Derivation successful	54
+CRC1166	68	F	LEFT COLON	2	Y	False	False	False	MSS	Not established	Derivation failed	68
+CRC1169	59	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	59
+CRC1198	76	M	RIGHT COLON	4	Y	True	False	False	MSS	Not established	Derivation failed	76
+CRC1239	62	F	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	62
+CRC1241	NA	NA	NA	NA	NA	False	False	False	NA	Validation successful	Derivation successful	NA
+CRC1245	66	M	RIGHT COLON	3	N	True	False	False	MSS	Validation not performed	Derivation successful	66
+CRC1251	71	M	RIGHT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	71
+CRC1257	62	M	LEFT COLON	4	Y	True	False	False	MSS	Validation not performed	Derivation successful	62
+CRC1272	63	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	63
+CRC1277	54	M	LEFT COLON	4	Y	True	False	False	MSS	Not established	Derivation failed	54
+CRC1278	57	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	57
+CRC1303	64	M	LEFT COLON	4	Y	False	False	False	NA	Not established	Derivation failed	64
+CRC1306	50	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	50
+CRC1307	62	F	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	62
+CRC1313	65	M	LEFT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	65
+CRC1314	55	M	LEFT COLON	2	Y	True	False	False	MSS	Validation successful	Derivation successful	55
+CRC1318	77	M	RIGHT COLON	3	N	True	False	False	MSS	Not established	Derivation failed	77
+CRC1321	47	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	47
+CRC1329	73	F	LEFT COLON	2	Y	False	False	False	MSS	Validation failed	Derivation successful	73
+CRC1331	58	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	58
+CRC1336	77	M	LEFT COLON	NA	Y	True	False	False	MSS	Validation not performed	Derivation successful	77
+CRC1337	67	M	LEFT COLON	3	N	False	False	False	MSS	Validation successful	Derivation successful	67
+CRC1342	48	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	48
+CRC1350	63	F	RIGHT COLON	4	N	True	False	False	MSS	Validation not performed	Derivation successful	63
+CRC1355	82	F	RIGHT COLON	4	N	True	False	False	MSS	Validation failed	Derivation successful	82
+CRC1359	66	M	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	66
+CRC1360	58	M	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	58
+CRC1367	66	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	66
+CRC1376	NA	NA	NA	NA	NA	False	False	False	MSS	Validation successful	Derivation successful	NA
+CRC1387	81	M	LEFT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	81
+CRC1389	68	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	68
+CRC1390	49	F	LEFT COLON	NA	N	True	False	False	MSI	Validation successful	Derivation successful	49
+CRC1399	56	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	56
+CRC1408	76	M	LEFT COLON	2	N	False	False	False	MSS	Validation failed	Derivation successful	76
+CRC1430	60	F	LEFT COLON	3	N	False	False	False	MSS	Validation successful	Derivation successful	60
+CRC1432	69	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	69
+CRC1445	69	M	RIGHT COLON	4	Y	False	True	False	MSI	Validation successful	Derivation successful	69
+CRC1446	77	F	LEFT COLON	4	Y	False	False	True	MSS	Validation successful	Derivation successful	77
+CRC1448	40	M	LEFT COLON	4	Y	True	False	False	MSI	Validation not performed	Derivation successful	40
+CRC1449	60	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	60
+CRC1451	44	M	LEFT COLON	2	N	True	False	False	MSS	Validation successful	Derivation successful	44
+CRC1460	74	M	LEFT COLON	1	N	False	False	True	MSS	Validation successful	Derivation successful	74
+CRC1472	77	F	LEFT COLON	1	N	False	False	False	MSS	Validation successful	Derivation successful	77
+CRC1474	NA	NA	NA	NA	NA	True	False	False	MSS	Validation failed	Derivation successful	NA
+CRC1477	67	M	RIGHT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	67
+CRC1486	52	M	RIGHT COLON	4	N	True	False	False	NA	Not established	Derivation failed	52
+CRC1501	42	F	LEFT COLON	NA	N	False	False	False	MSS	Validation failed	Derivation successful	42
+CRC1502	68	M	LEFT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	68
+CRC1522	29	F	LEFT COLON	4	Y	False	False	False	NA	Not established	Derivation failed	29
+CRC1523	82	F	LEFT COLON	4	N	True	False	False	MSS	Validation successful	Derivation successful	82
+CRC1530	53	M	RIGHT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	53
+CRC1561	58	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	58
+CRC1562	59	F	LEFT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	59
+CRC1563	67	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	67
+CRC1566	56	M	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	56
+CRC1568	65	M	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	65
+CRC1575	NA	NA	NA	NA	NA	False	False	False	MSS	Validation successful	Derivation successful	NA
+CRC1579	52	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	52
+CRC1581	62	M	LEFT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	62
+CRC1586	55	F	RIGHT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	55
+CRC1588	64	M	LEFT COLON	2	N	True	False	False	MSS	Validation successful	Derivation successful	64
+CRC1589	55	M	LEFT COLON	2	N	True	False	False	MSS	Validation successful	Derivation successful	55
+CRC1598	57	M	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	57
+CRC1599	58	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	58
+CRC1605	54	M	RIGHT COLON	2	N	True	False	False	MSS	Validation failed	Derivation successful	54
+CRC1606	77	M	LEFT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	77
+CRC1614	29	M	LEFT COLON	4	Y	False	True	False	MSS	Validation successful	Derivation successful	29
+CRC1620	70	F	LEFT COLON	3	N	True	False	False	MSS	Validation successful	Derivation successful	70
+CRC1628	57	M	RIGHT COLON	3	Y	False	False	False	MSS	Validation successful	Derivation successful	57
+CRC1629	81	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	81
+CRC1634	61	M	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	61
+CRC1648	70	F	LEFT COLON	4	Y	False	False	False	NA	Not established	Derivation failed	70
+CRC1650	83	F	LEFT COLON	4	N	True	False	False	NA	Not established	Derivation failed	83
+CRC1675	58	F	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	58
+CRC1681	77	M	LEFT COLON	3	Y	True	False	False	MSS	Validation not performed	Derivation successful	77
+CRC1709	73	M	LEFT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	73
+CRC1723	78	NA	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	78
+CRC1729	70	M	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	70
+CRC1744	55	M	LEFT COLON	3	Y	True	False	False	MSS	Validation successful	Derivation successful	55
+CRC1745	68	M	LEFT COLON	4	Y	False	False	True	MSS	Validation successful	Derivation successful	68
+CRC1746	66	F	RIGHT COLON	4	Y	False	False	True	NA	Not established	Derivation failed	66
+CRC1748	74	M	RIGHT COLON	2	Y	False	False	False	MSS	Validation failed	Derivation successful	74
+CRC1757	52	F	LEFT COLON	4	Y	False	True	False	MSS	Validation successful	Derivation successful	52
+CRC1765	44	F	LEFT COLON	2	Y	True	False	False	NA	Not established	Derivation failed	44
+CRC1772	75	M	LEFT COLON	4	Y	NA	NA	NA	MSS	Validation not performed	Derivation successful	75
+CRC1774	49	F	LEFT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	49
+CRC1779	78	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	78
+CRC1781	44	F	LEFT COLON	2	Y	NA	NA	NA	NA	Validation not performed	Derivation successful	44
+CRC1782	65	M	RIGHT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	65
+CRC1811	66	M	LEFT COLON	4	N	True	False	False	NA	Not established	Derivation failed	66
+CRC1816	62	F	RIGHT COLON	3	N	True	False	False	NA	Not established	Derivation failed	62
+CRC1819	48	F	RIGHT COLON	4	Y	False	False	False	MSS	Validation failed	Derivation successful	48
+CRC1824	49	M	NA	4	Y	True	False	False	NA	Not established	Derivation failed	49
+CRC1826	57	F	RIGHT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	57
+CRC1868	65	M	RIGHT COLON	2	Y	False	False	False	NA	Not established	Derivation failed	65
+CRC1870	54	F	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	54
+CRC1875	69	F	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	69
+CRC1883	67	M	RIGHT COLON	2	Y	False	False	True	MSS	Validation failed	Derivation successful	67
+CRC1888	65	F	RIGHT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	65
+CRC1893	61	M	RIGHT COLON	2	N	True	False	False	MSS	Validation not performed	Derivation successful	61
+CRC1895	59	F	RIGHT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	59
+CRC1897	69	F	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	69
+CRC1900	83	F	LEFT COLON	3	N	False	False	False	MSS	Validation successful	Derivation successful	83
+CRC1901	56	M	LEFT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	56
+CRC1903	54	F	RIGHT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	54
+CRC1916	73	M	RIGHT COLON	3	Y	False	False	False	MSS	Validation successful	Derivation successful	73
+CRC1917	56	M	LEFT COLON	4	Y	False	False	False	MSS	Validation successful	Derivation successful	56
+CRC1921	60	M	LEFT COLON	2	Y	False	False	False	MSS	Validation successful	Derivation successful	60
+CRC1949	61	M	LEFT COLON	3	N	False	False	True	MSS	Validation not performed	Derivation successful	61
+CRC1951	59	F	LEFT COLON	4	Y	True	False	False	MSS	Validation not performed	Derivation successful	59
+CRC1961	69	F	LEFT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	69
+CRC1977	60	M	LEFT COLON	4	Y	True	False	False	MSS	Validation not performed	Derivation successful	60
+CRC1979	50	M	RIGHT COLON	4	Y	True	False	False	MSS	Validation successful	Derivation successful	50
+CRC1989	51	M	LEFT COLON	4	N	False	False	False	MSS	Validation successful	Derivation successful	51
+CRC2026	56	M	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	56
+CRC2044	62	M	RIGHT COLON	2	Y	False	False	False	MSS	Validation not performed	Derivation successful	62
+CRC2060	55	F	RIGHT COLON	4	Y	False	False	False	NA	Not established	Derivation failed	55
+CRC2113	72	M	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	72
+CRC2394	51	M	LEFT COLON	4	Y	False	False	False	MSS	Validation not performed	Derivation successful	51
+CRC2530	53	F	RIGHT COLON	4	Y	NA	NA	NA	NA	Not established	Derivation failed	53
+CRC2540	54	F	RIGHT COLON	4	Y	NA	NA	NA	NA	Not established	Derivation failed	54
+CRC2541	56	M	RIGHT COLON	4	Y	NA	NA	NA	NA	Not established	Derivation failed	56
+CRC2546	49	M	RIGHT COLON	4	Y	True	False	False	NA	Not established	Derivation failed	49
+CRC2565	81	F	RIGHT COLON	2	Y	NA	NA	NA	NA	Not established	Derivation failed	81
+CRC2566	63	M	RIGHT COLON	3	N	True	False	False	MSS	Validation not performed	Derivation successful	63
+CRC2572	44	M	RIGHT COLON	4	Y	NA	NA	NA	NA	Not established	Derivation failed	44
+CRC2573	71	M	LEFT COLON	4	Y	NA	NA	NA	MSS	Validation not performed	Derivation successful	71
+CRC2597	70	M	LEFT COLON	4	Y	NA	NA	NA	NA	Not established	Derivation failed	70
+CRC2606	60	F	LEFT COLON	3	Y	NA	NA	NA	NA	Not established	Derivation failed	60
+CRC2772	68	M	LEFT COLON	4	Y	NA	NA	NA	MSS	Validation not performed	Derivation successful	68
+CRC2790	81	M	RIGHT COLON	4	N	NA	NA	NA	MSS	Validation not performed	Derivation successful	81
