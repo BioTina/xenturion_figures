@@ -3,6 +3,12 @@ SRC_DIR="../local/src/"
 ## figure 1
 # [- dok is a marker for rules that have been checked inside the docker image.]
 
+## fig1e - dok
+rule circos:
+    input: cli="../local/data/clinical_data_for_circos_revision.tsv", colori="../local/data/clinical_data_circos_cols_emendati_complete_difforder3_wderivation_revision.tsv"
+    output: circos="circles_prediletti_complete_wderivation_revision.pdf", legenda="legenda_circles_prediletti_complete_wderivation_revision.pdf"
+    script: SRC_DIR+"/cerchietti_completi_wderivation_revision.R"
+
 ## fig1f - dok
 rule multivariata_clinical_data:
     input: clinical_data = "../local/data/clinical_data_done_revision020424.tsv", pdo="../local/data/whoiswho_validation_xen_revision_derivation.tsv", 
@@ -286,7 +292,7 @@ rule heatmap_cnv:
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
-# fig4c - TODO FIXME?? everything is marked blue as loss_loh
+## fig4c - TODO FIXME?? everything is marked blue as loss_loh
 rule pdxts_early_late:
     input:d='../local/data/loh_heatmap_100000.csv',annotation='../local/data/loh_annotation_100000.csv'
     output: out='heatmap_loh_events_100000_pdxts_early_late.pdf'
@@ -406,7 +412,7 @@ rule pdxts_early_late:
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
-# fig4d - dok
+## fig4d - dok
 rule plot_PDXTearly_PDXTlate_clones:
     input: "../local/data/LMO-early-late_clones.50-10.table"
     output: "PDXTearly_PDXTlate_clones.pdf"
@@ -416,20 +422,6 @@ rule plot_PDXTearly_PDXTlate_clones:
          python3 {params.CMD} {input} "" "PDXT_early" "PDXT_late" {output}
         """
 
-# suppl fig7d - dok
-rule plot_PDXTearly_PDX_clones:
-    input: "../local/data/LMO-early-LMX_clones.50-10.table"
-    output: "PDXTearly_PDX_clones.pdf"
-    params: CMD=SRC_DIR+"/barplot.py"
-    shell: 
-        """
-            python3 {params.CMD} {input} "" "PDXT_early" "PDX" {output}
-        """
-
-rule all_clones_plot:
-    input: "PDXTearly_PDXTlate_clones.pdf", "PDXTearly_PDX_clones.pdf"
-
-
 ## figure 5
 
 ## fig5a - dok
@@ -438,7 +430,13 @@ rule pheatmap_buoni:
     output: pheatmap="pheatmap_correlation_buoni.pdf"
     script: SRC_DIR+'/pheatmap.R'
 
-## fig5b - dok
+## fig5b
+rule heatmap_corr_el:
+    input: vsd_file="../local/data/vsd_early_late.tsv.gz", samples_file="../local/data/early_late_samples_data"
+    output: res_pdf="heatmap_correlation_early_late.pdf"
+    script: SRC_DIR+"/heatmap_correlation_early_late.R"
+
+## fig5c - dok
 rule sankey_cms:
     input: "../local/data/reorder_model_cms_validated.tsv"
     output: html="sankey_model_cms_validated_coppie_simo.html"
