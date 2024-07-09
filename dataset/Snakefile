@@ -175,7 +175,7 @@ rule jaccard_mut_sim_early_late:
 ## fig4b - CN early late - dok
 rule heatmap_cnv:
     input:d='../local/data/heatmap_100000.csv',annotation='../local/data/annotation_100000.csv'
-    output: out='heatmap_cnv_events_100000_pdxts_early_late.pdf'
+    output: out='heatmap_finale_cnv_early_late_100000.pdf'
     run:
         import numpy as np
         import pandas as pd
@@ -263,39 +263,39 @@ rule heatmap_cnv:
         ax.tick_params(axis='x', rotation=0, labelsize=5)
         ax.xaxis.set_minor_locator(ticker.FixedLocator(chr_boundaries))
         ax.tick_params(axis='x', length=8, which='minor')
-        
+        ax.yaxis.tick_left()
         
        
         # add legend
         box = culo.get_position()
         #culo.set_position([box.x0, box.y0, box.width * 0.3, box.height])
-        legend_ax = h.fig.add_axes([0, 0, 0.1, 0.6])
+        legend_ax = h.fig.add_axes([0, 0, 0.1, 1])
         legend_ax.axis('off')
         # reconstruct color map
         colors = [cmap_dict[i] for i in range(3)]
         # add color map to legend
         patches = [mpatches.Patch(facecolor=c, edgecolor=c) for c in colors]
-        value_to_int={'NO':0,'GAINED':1, 'LOSS':2}
+        value_to_int={'No changes':0,'Gains in late-passages PDXTs':1, 'Losses in late-passages PDXTs':2}
         legend = legend_ax.legend(patches,
             value_to_int.keys(),
-            handlelength=0.8, loc='upper left')
+            handlelength=0.5, loc='upper left',fontsize=8)
         for t in legend.get_texts():
-            t.set_ha("left")
-
+            t.set_ha("right")
+        
         #ax.set_xlabel("Chromosomes", fontweight='bold', fontsize=25)
         #ax.set_ylabel("Clones", fontsize=25, fontweight='bold')
         # A4 is 8-1/4 x 11-3/4 in
-        plt.gcf().set_size_inches(7, 3.8) # w, h
+        plt.gcf().set_size_inches(7, 2.8) # w, h
         # cannot find a way to get tolerable linewidth cause linewidth parameter seem to be ignored, will
         # scale by hand
         #plt.gcf().set_size_inches(37, 21)
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
-## fig4c - TODO FIXME?? everything is marked blue as loss_loh
+## fig4c - LOH early late
 rule pdxts_early_late:
     input:d='../local/data/loh_heatmap_100000.csv',annotation='../local/data/loh_annotation_100000.csv'
-    output: out='heatmap_loh_events_100000_pdxts_early_late.pdf'
+    output: out='heatmap_finale_loh_100000_pdxts_early_late.pdf'
     run:
         import numpy as np
         import pandas as pd
@@ -359,7 +359,7 @@ rule pdxts_early_late:
         #cbar_kws={"ticks": np.arange(0,13,1)}
         maxv = cnvs.max().max()
         minv = cnvs.min().min()
-        cmap_dict ={0:'white',1:'grey',2:'blue',3:'red'}
+        cmap_dict ={0:'white',1:'darkgrey',2:'#881266ff',3:'#548135ff'}
         cmap = ListedColormap([cmap_dict[i] for i in range(4)])
         
         f, culo = plt.subplots()
@@ -368,6 +368,8 @@ rule pdxts_early_late:
         #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='bwr', vmax=maxv, vmin=minv, center=0)# cbar_kws=cbar_kws)
         #h = sns.clustermap(cnvs, col_cluster=False, row_cluster=False, yticklabels = False, cmap='coolwarm', robust=True, center=0)# cbar_kws=cbar_kws)
         #Z = h.dendrogram_row.linkage
+        #h.ax_heatmap.xaxis.set_label_position('top')
+        
         ax = h.ax_heatmap
         h.cax.set_visible(False)
 		#ax.set_rasterization_zordeset_rasterization_zorderr(1)
@@ -379,36 +381,41 @@ rule pdxts_early_late:
         ax.xaxis.set_major_locator(ticker.FixedLocator((pos_list)))
        
         ax.xaxis.set_major_formatter(ticker.FixedFormatter((chrN_list)))
+
         h.ax_heatmap.set_yticklabels(h.ax_heatmap.get_ymajorticklabels(), fontsize = 6)
+      
         ax.tick_params(axis='x', rotation=0, labelsize=5)
         ax.xaxis.set_minor_locator(ticker.FixedLocator(chr_boundaries))
         ax.tick_params(axis='x', length=8, which='minor')
-        
-        
+        #ax.yaxis.set_label_position('left')
+        ax.yaxis.tick_left()
        
         # add legend
         box = culo.get_position()
         #culo.set_position([box.x0, box.y0, box.width * 0.3, box.height])
-        legend_ax = h.fig.add_axes([0, 0, 0.1, 0.6])
+        legend_ax = h.fig.add_axes([0, 0, 0.1, 1])
+        
         legend_ax.axis('off')
+        
         # reconstruct color map
         colors = [cmap_dict[i] for i in range(4)]
         # add color map to legend
         patches = [mpatches.Patch(facecolor=c, edgecolor=c) for c in colors]
-        value_to_int={'No event':0,'common':1,'loss_loh':2,'gained_loh':3}
+        value_to_int={'No LOH':0,'Common LOH in both early-passage and late-passage PDXTs':1,'LOH newly detected in late-passage PDXTs':2,'LOH no longer detected in late-passage PDXTs':3}
         legend = legend_ax.legend(patches,
             value_to_int.keys(),
-            handlelength=0.8, loc='upper left')
+            handlelength=0.8, loc='upper left',fontsize=8)
         for t in legend.get_texts():
-            t.set_ha("left")
-
+            t.set_ha("right")
+        
         #ax.set_xlabel("Chromosomes", fontweight='bold', fontsize=25)
         #ax.set_ylabel("Clones", fontsize=25, fontweight='bold')
         # A4 is 8-1/4 x 11-3/4 in
-        plt.gcf().set_size_inches(7, 3.8) # w, h
+        plt.gcf().set_size_inches(7, 2.8) # w, h
         # cannot find a way to get tolerable linewidth cause linewidth parameter seem to be ignored, will
         # scale by hand
         #plt.gcf().set_size_inches(37, 21)
+        
         plt.savefig(output[0], dpi=300)
         plt.clf()
 
