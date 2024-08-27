@@ -433,7 +433,7 @@ rule plot_PDXTearly_PDXTlate_clones:
 
 ## fig5a - dok
 rule pheatmap_buoni:
-    input: correlation_matrix="../local/data/LMX-LMO_correlation_buoni.tsv.gz"
+    input: correlation_matrix="../local/data/LMX-LMO_correlation_buoni_parallelo.tsv.gz"
     output: pheatmap="pheatmap_correlation_buoni.pdf"
     script: SRC_DIR+'/pheatmap.R'
 
@@ -445,12 +445,12 @@ rule heatmap_corr_el:
 
 ## fig5c - dok
 rule sankey_cms:
-    input: "../local/data/reorder_model_cms_validated.tsv"
+    input: "../local/data/model_cms_validated_parallelo.tsv"
     output: html="sankey_model_cms_validated_coppie_simo.html"
     script: SRC_DIR+"/sankey_classification.R"
 
 rule sankey_cris:
-    input: "../local/data/vsd_model_cris-right_validated.tsv"
+    input: "../local/data/vsd_model_cris-right_validated_clean_parallelo.tsv"
     output: html="vsd_sankey_model_simo_cris_validated.html"
     script: SRC_DIR+"/sankey_classification.R"
 
