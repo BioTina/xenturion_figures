@@ -1,7 +1,7 @@
 # xenturion_figures
 Snakemake pipeline to reproduce Xenturion bioinformatics main figures panels.
 
-# XENTURION, a multidimensional resource of xenografts and tumoroids from metastatic colorectal cancer patients for population-level translational oncology
+# XENTURION is a population-level multidimensional resource of xenografts and tumoroids from metastatic colorectal cancer patients
 
 Snakemake pipeline to reproduce Xenturion bioinformatics main figures panels.
 Keep in mind that final figures were assembled manually (e.g. for
